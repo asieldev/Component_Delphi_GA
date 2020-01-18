@@ -1,0 +1,77 @@
+unit Unit3;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  TGenetic.Algorithm, FMX.Controls.Presentation, FMX.StdCtrls, FMX.ScrollBox,
+  FMX.Memo, FMXTee.Engine, FMXTee.Procs, FMXTee.Chart, FMXTee.Chart.Functions,
+  FMXTee.Series;
+
+type
+  TForm3 = class(TForm)
+    GA: TGAlgorithm;
+    Button1: TButton;
+    Memo1: TMemo;
+    Chart1: TChart;
+    Series1: TLineSeries;
+    procedure Button1Click(Sender: TObject);
+    procedure GAFitness(NewChromosome: TChromosome; var FitnessValue: Real);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.fmx}
+
+procedure TForm3.Button1Click(Sender: TObject);
+var
+   i,j : integer;
+begin
+    with(GA) do
+     if(initialize)then
+        begin
+         for i := 1 to 100 do
+           begin
+             for j := 1 to 5 do
+               begin
+
+                  GA.geracao;
+
+
+               end;
+
+                  Series1.AddXY(i,GA.GetPopulation.maiorAptidao);
+                  Memo1.Lines.Add(FloatToStr(GA.GetPopulation.maiorAptidao));
+
+           end
+       end
+
+end;
+
+
+
+procedure TForm3.GAFitness(NewChromosome: TChromosome; var FitnessValue: Real);
+var
+i:integer;
+x1,x2:real;
+begin
+
+{for i:=1 to 30 do
+    if NewChromosome[i] then soma:=soma+1;
+FitnessValue:=soma;           }
+
+x1:=GA.binarioParaInteiro(NewChromosome,1,15);
+x2:=GA.binarioParaInteiro(NewChromosome,16,30);
+FitnessValue:=abs(pi - x1/(x2+1));
+
+end;
+
+end.

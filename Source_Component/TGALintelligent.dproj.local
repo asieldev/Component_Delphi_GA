@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/05/17 19:23:46.000.462,=rtl.dcp</Transaction>
+    <Transaction>2019/05/17 19:24:06.000.972,C:\Users\asiel\Documents\Embarcadero\Studio\Projects\Package1.dproj=C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\Hola.dproj</Transaction>
+    <Transaction>2019/05/17 19:24:17.000.774,=C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALib.pas</Transaction>
+    <Transaction>2019/05/17 19:25:05.000.664,C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\Hola.dproj=C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALintelligent.dproj</Transaction>
+    <Transaction>2019/05/17 19:26:18.000.764,C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALib.pas=C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALintelligent.pas</Transaction>
+    <Transaction>2019/05/17 19:28:54.000.804,C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALintelligent.pas=C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALib.pas</Transaction>
+    <Transaction>2019/05/17 19:39:34.000.921,C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALib.pas=C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGA.pas</Transaction>
+    <Transaction>2019/05/17 19:47:17.000.348,C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGA.pas=C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGenetic.Algorithm.pas</Transaction>
+    <Transaction>2019/05/18 12:14:40.000.680,=C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\New1.rc</Transaction>
+    <Transaction>2019/05/18 12:20:19.000.853,C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGenetic.Algorithm.rc=C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\New1.rc</Transaction>
+    <Transaction>2019/05/18 12:20:37.000.120,C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\Resource\TGenetic.Algorithm.rc=C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGenetic.Algorithm.rc</Transaction>
+    <Transaction>2019/05/18 13:09:57.000.086,=C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\Resource\TGenetic.Algorithm.bmp</Transaction>
+    <Transaction>2019/05/18 13:41:55.000.503,=C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\Resource\Ico2.png</Transaction>
+    <Transaction>2019/05/18 13:45:54.000.442,C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\Resource\Ico2.png=</Transaction>
+    <Transaction>2019/05/18 13:45:54.000.552,=C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\Resource\Ico2.bmp</Transaction>
+    <Transaction>2019/05/18 13:51:12.000.848,C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALintelligent.dproj=C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALintelligent.dproj</Transaction>
+    <Transaction>2019/05/18 14:01:43.000.355,C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\Resource\TGenetic.Algorithm.bmp=</Transaction>
+    <Transaction>2019/05/18 14:48:11.000.971,=C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\Resource\TGenetic.Algorithm.bmp</Transaction>
+    <Transaction>2019/05/18 14:48:11.000.830,C:\Users\Asiel.Asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\Resource\Ico2.bmp=</Transaction>
+    <Transaction>2019/05/22 19:29:33.000.096,=vcl.dcp</Transaction>
+    <Transaction>2019/05/22 20:00:11.000.756,=fmx.dcp</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile Android="AVD_for_Galaxy_Nexus_by_Google"/>
+	</ActiveMobileDevice>
+</BorlandProject>

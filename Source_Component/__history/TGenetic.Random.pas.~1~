@@ -1,0 +1,114 @@
+unit Aleatorios;
+
+
+{
+------------------------------------------------------------------
+Código de Geração de Números Aleatórios
+Desenvolvido em 1999 para o Depto. de Ciência da Computação da Universidade
+Federal de Juiz de Fora (UFJF)
+
+Orientador: Hélio J. C. Barbosa
+Desenvolvedor: André da Motta Salles Barreto
+Dúvidas, críticas e/ou sugestões: amsb@acessa.com
+------------------------------------------------------------------
+Você pode utilizar esse código livremente, desde que sejam mantidos os créditos
+originais.
+}
+
+
+interface
+
+   procedure avancaGeracao;
+   procedure iniciaGeracao(random_seed:real);
+   function aleatorio:real;
+   function caraCoroa(probabilidade:real):boolean;
+   function alt(min,max:integer):integer;
+   function forneceSemente(semente:real):boolean;
+
+implementation
+
+var
+vetorAleatorios:array[1..55] of real; {Array de 55 números pseudo-aleatórios}
+aleatorioCorrente:integer;            {Número pseudo-aleatório corrente}
+
+procedure avancaGeracao;
+{Cria o próximo lote de 55 números aleatórios}
+var
+j1:integer;
+novoAlt:real;
+begin
+for j1:= 1 to 24 do
+  begin
+  novoAlt := vetorAleatorios[j1] - vetorAleatorios[j1+31];
+  if (novoAlt < 0.0) then novoAlt := novoAlt + 1.0;
+  vetorAleatorios[j1] := novoAlt;
+  end;
+for j1:= 25 to 55 do
+    begin
+    novoAlt := vetorAleatorios[j1] - vetorAleatorios[j1-24];
+    if (novoAlt < 0.0) then novoAlt := novoAlt + 1.0;
+    vetorAleatorios[j1] := novoAlt;
+    end;
+end;
+
+procedure iniciaGeracao(random_seed:real);
+{Prepara o vetor para a geração dos números aleatórios}
+var
+j1,ii:integer;
+novoAlt,antigoAlt:real;
+begin
+vetorAleatorios[55] := random_seed;
+antigoAlt := random_seed;
+novoAlt := 1.0e-9;
+for j1:=1 to 54 do
+  begin
+  ii := 21*j1 mod 55;
+  vetorAleatorios[ii] := novoAlt;
+  novoAlt := antigoAlt - novoAlt;
+  if (novoAlt < 0.0) then novoAlt:=novoAlt+1.0;
+  antigoAlt:=vetorAleatorios[ii]
+  end;
+avancaGeracao;
+avancaGeracao;
+avancaGeracao;
+aleatorioCorrente:=0;
+end;
+
+function aleatorio:real;
+{ Retorna um número pseudo-aleatório entre 0 e 1}
+{ Utiliza o Método Subtrativo Para maiores detalhes, ver Knuth, D. (1969), v. 2}
+begin
+aleatorioCorrente := aleatorioCorrente + 1;
+if (aleatorioCorrente > 55) then
+  begin
+  aleatorioCorrente:=1;
+  avancaGeracao;
+  end;
+aleatorio := vetorAleatorios[aleatorioCorrente];
+end;
+
+function caraCoroa(probabilidade:real):boolean;
+{ Retorna verdadeiro com a probabilidade `probabilidade`}
+begin
+if probabilidade = 1.0 then caraCoroa := true
+else caraCoroa := (aleatorio <= probabilidade);
+end;
+
+function alt(min,max:integer):integer;
+{ Retorna um valor inteiro aleatório entre o mínimo (min) e o máximo (max)}
+begin
+if min >= max then alt := min
+else alt := trunc(min + aleatorio * (max-min));
+end;
+
+function forneceSemente(semente:real):boolean;
+{Pega uma semente no intervalo (0,1) para a geração de números aleatórios }
+begin
+if (semente>0) and (semente<1) then
+   begin
+   iniciaGeracao(semente);
+   forneceSemente:=true;
+   end
+else forneceSemente:=false;
+end;
+end.

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/05/17 19:23:46.000.462,=rtl.dcp</Transaction>
+    <Transaction>2019/05/17 19:24:06.000.972,C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\Hola.dproj=C:\Users\asiel\Documents\Embarcadero\Studio\Projects\Package1.dproj</Transaction>
+    <Transaction>2019/05/17 19:24:17.000.774,=C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALib.pas</Transaction>
+    <Transaction>2019/05/17 19:25:05.000.664,C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALintelligent.dproj=C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\Hola.dproj</Transaction>
+    <Transaction>2019/05/17 19:26:18.000.764,C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALintelligent.pas=C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALib.pas</Transaction>
+    <Transaction>2019/05/17 19:28:54.000.804,C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALib.pas=C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALintelligent.pas</Transaction>
+    <Transaction>2019/05/17 19:39:34.921,C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGA.pas=C:\Users\asiel\Dropbox\Proyectos\Computación Evol\Proy\Source\TGALib.pas</Transaction>
+  </Transactions>
+</BorlandProject>

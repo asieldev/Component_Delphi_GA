@@ -1,0 +1,1505 @@
+object frMain: TfrMain
+  Left = 0
+  Top = 0
+  BorderStyle = None
+  Caption = 'Form3'
+  ClientHeight = 571
+  ClientWidth = 923
+  Position = DesktopCenter
+  StyleBook = StyleBook1
+  Transparency = True
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object Rectangle1: TRectangle
+    Align = Contents
+    Fill.Color = claWhite
+    Size.Width = 923.000000000000000000
+    Size.Height = 571.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    XRadius = 20.000000000000000000
+    YRadius = 20.000000000000000000
+    object Layout1: TLayout
+      Align = Client
+      Margins.Left = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 830.000000000000000000
+      Size.Height = 561.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Layout8: TLayout
+        Align = Top
+        Position.Y = 78.000000000000000000
+        Size.Width = 830.000000000000000000
+        Size.Height = 195.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        object Label1: TLabel
+          Align = Top
+          StyledSettings = [Style]
+          Margins.Left = 15.000000000000000000
+          Margins.Right = 500.000000000000000000
+          Position.X = 15.000000000000000000
+          Size.Width = 315.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Century Gothic'
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.FontColor = claLightsteelblue
+          Text = 'caracteristicas'
+          TabOrder = 0
+        end
+        object Rectangle3: TRectangle
+          Fill.Color = claNull
+          Position.X = 104.000000000000000000
+          Position.Y = 40.000000000000000000
+          Size.Width = 137.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claDarkgray
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          object Text4: TText
+            Margins.Bottom = 15.000000000000000000
+            Position.X = -88.000000000000000000
+            Position.Y = -3.000000000000000000
+            Size.Width = 73.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Generations:'
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.FontColor = claSilver
+          end
+          object lbGenerations: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            KeyboardType = DecimalNumberPad
+            TextSettings.FontColor = claChocolate
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Size.Width = 127.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Example: 100'
+            StyledSettings = [Family, Size, Style]
+          end
+        end
+        object Rectangle4: TRectangle
+          Fill.Color = claNull
+          Position.X = 104.000000000000000000
+          Position.Y = 72.000000000000000000
+          Size.Width = 137.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claDarkgray
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          object Text5: TText
+            Margins.Bottom = 15.000000000000000000
+            Position.X = -88.000000000000000000
+            Position.Y = -2.000000000000000000
+            Size.Width = 73.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Chromo Size:'
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.FontColor = claSilver
+          end
+          object lbChromoSize: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            TextSettings.FontColor = claChocolate
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Size.Width = 127.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Max: 30'
+            StyledSettings = [Family, Size, Style]
+          end
+        end
+        object Rectangle6: TRectangle
+          Fill.Color = claNull
+          Position.X = 104.000000000000000000
+          Position.Y = 104.000000000000000000
+          Size.Width = 137.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claDarkgray
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          object Text6: TText
+            Margins.Bottom = 15.000000000000000000
+            Position.X = -88.000000000000000000
+            Size.Width = 89.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Prob. Crossover:'
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.FontColor = claSilver
+          end
+          object lbProbCrossover: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            TextSettings.FontColor = claChocolate
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Size.Width = 127.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Example: 0,9'
+            StyledSettings = [Family, Size, Style]
+          end
+        end
+        object Rectangle8: TRectangle
+          Fill.Color = claNull
+          Position.X = 104.000000000000000000
+          Position.Y = 136.000000000000000000
+          Size.Width = 137.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claDarkgray
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          object Text7: TText
+            Margins.Bottom = 15.000000000000000000
+            Position.X = -88.000000000000000000
+            Position.Y = -2.000000000000000000
+            Size.Width = 89.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Prob. Mutation:  '
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.FontColor = claSilver
+          end
+          object lbProbMutation: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            TextSettings.FontColor = claChocolate
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Size.Width = 127.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Example: 0,8'
+            StyledSettings = [Family, Size, Style]
+          end
+        end
+        object Line2: TLine
+          Align = Bottom
+          LineType = Bottom
+          Margins.Left = 15.000000000000000000
+          Margins.Right = 15.000000000000000000
+          Position.X = 15.000000000000000000
+          Position.Y = 188.000000000000000000
+          Size.Width = 800.000000000000000000
+          Size.Height = 7.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claSilver
+        end
+        object swOptimization: TSwitch
+          Hint = 'Optimization Type'
+          IsChecked = False
+          Opacity = 0.699999988079071000
+          Position.X = 504.000000000000000000
+          Position.Y = 74.000000000000000000
+          Size.Width = 33.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          OnMouseEnter = swOptimizationMouseEnter
+          OnMouseLeave = swOptimizationMouseLeave
+          OnSwitch = swOptimizationSwitch
+          object lbOptimizationType: TText
+            Margins.Bottom = 15.000000000000000000
+            Position.X = 32.000000000000000000
+            Position.Y = -1.000000000000000000
+            Size.Width = 65.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Maximum'
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.FontColor = claSilver
+          end
+        end
+        object swSelection: TSwitch
+          Hint = 'Selection Type:'
+          IsChecked = False
+          Opacity = 0.699999988079071000
+          Position.X = 504.000000000000000000
+          Position.Y = 42.000000000000000000
+          Size.Width = 33.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          OnMouseEnter = swSelectionMouseEnter
+          OnMouseLeave = swSelectionMouseLeave
+          OnSwitch = swSelectionSwitch
+          object lbSelectionType: TText
+            Margins.Bottom = 15.000000000000000000
+            Position.X = 32.000000000000000000
+            Position.Y = -1.000000000000000000
+            Size.Width = 57.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Roulette'
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.FontColor = claSilver
+          end
+        end
+        object Layout7: TLayout
+          Align = Right
+          Padding.Bottom = 5.000000000000000000
+          Margins.Top = -10.000000000000000000
+          Position.X = 608.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 222.000000000000000000
+          Size.Height = 173.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          object Chart2: TChart
+            Foot.Font.StyleExt = {00040000000200000004000000}
+            Legend.ColorWidth = 4
+            Legend.DividingLines.Color = x00FFFFFF
+            Legend.DividingLines.Fill.Color = x00FFFFFF
+            Legend.Emboss.Transparency = 83
+            Legend.Font.Family = 'Cambria'
+            Legend.Font.Size = 12.927710533142090000
+            Legend.Font.Color = xFFC05417
+            Legend.Font.Brush.Color = xFFC05417
+            Legend.Frame.Visible = False
+            Legend.GlobalTransparency = 18
+            Legend.Shadow.Visible = False
+            Legend.ShapeStyle = fosRoundRectangle
+            Legend.Symbol.DefaultPen = False
+            Legend.Symbol.Width = 4
+            Legend.TextStyle = ltsRightPercent
+            Legend.Title.Font.StyleExt = {00070000000000000004000000}
+            Legend.Transparency = 100
+            Legend.Transparent = True
+            MarginBottom = 0
+            MarginLeft = 0
+            MarginRight = 0
+            MarginTop = 0
+            SubFoot.Font.Style = []
+            SubFoot.Font.Color = xFF46A4ED
+            SubFoot.Font.Brush.Color = xFF46A4ED
+            SubTitle.Margins.Top = 4
+            Title.AutoSize = False
+            Title.Text.Strings = (
+              '')
+            Title.AdjustFrame = False
+            BottomAxis.Axis.Visible = False
+            BottomAxis.Grid.Color = xA94BC4E8
+            BottomAxis.Grid.Style = psDot
+            BottomAxis.Grid.Fill.Color = xA94BC4E8
+            BottomAxis.Grid.Visible = False
+            BottomAxis.LabelsFormat.Font.Color = xFF5395F4
+            BottomAxis.LabelsFormat.Font.Brush.Color = xFF5395F4
+            BottomAxis.LabelsFormat.Margins.Left = 12
+            BottomAxis.LabelsFormat.Margins.Right = 9
+            BottomAxis.LabelsSize = 22
+            BottomAxis.MinorTickCount = 1
+            BottomAxis.MinorTicks.Color = xFF1485CC
+            BottomAxis.MinorTicks.Fill.Color = xFF1485CC
+            BottomAxis.TickLength = 5
+            BottomAxis.Ticks.Color = xFF2AB5D3
+            BottomAxis.Ticks.Fill.Color = xFF2AB5D3
+            BottomAxis.TicksInner.Color = xFF4392B1
+            BottomAxis.TicksInner.Fill.Color = xFF4392B1
+            BottomAxis.Title.Caption = 'Generations'
+            BottomAxis.Title.Font.Color = xFF279DE7
+            BottomAxis.Title.Font.Brush.Color = xFF279DE7
+            LeftAxis.Axis.Visible = False
+            LeftAxis.Grid.Color = xD89BD1FC
+            LeftAxis.Grid.Style = psDot
+            LeftAxis.Grid.Fill.Color = xD89BD1FC
+            LeftAxis.Grid.Visible = False
+            LeftAxis.LabelsFormat.Font.Color = xFF56B2FA
+            LeftAxis.LabelsFormat.Font.Brush.Color = xFF56B2FA
+            LeftAxis.LabelsFormat.Margins.Left = 52
+            LeftAxis.LabelsFormat.Margins.Top = 27
+            LeftAxis.LabelsFormat.Margins.Right = 15
+            LeftAxis.LabelsOnAxis = False
+            LeftAxis.LabelsSeparation = 0
+            LeftAxis.LabelsSize = 30
+            LeftAxis.MinorTickCount = 1
+            LeftAxis.MinorTicks.Color = xFF30B5C9
+            LeftAxis.MinorTicks.Fill.Color = xFF30B5C9
+            LeftAxis.PositionPercent = -2.000000000000000000
+            LeftAxis.TickLength = -4
+            LeftAxis.Ticks.Color = xFF59A1E7
+            LeftAxis.Ticks.Fill.Color = xFF59A1E7
+            LeftAxis.TicksInner.Visible = False
+            LeftAxis.TickOnLabelsOnly = False
+            LeftAxis.Title.Caption = 'Major Fitness'
+            LeftAxis.Title.Font.Color = xFF46A4FE
+            LeftAxis.Title.Font.Brush.Color = xFF46A4FE
+            RightAxis.Axis.Visible = False
+            RightAxis.MinimumRound = True
+            RightAxis.MinorTickCount = 0
+            RightAxis.PositionPercent = 3.000000000000000000
+            RightAxis.TickLength = 3
+            TopAxis.Axis.Visible = False
+            TopAxis.MinorTickCount = 0
+            View3D = False
+            View3DOptions.Elevation = 315
+            View3DOptions.Orthogonal = False
+            View3DOptions.Perspective = 0
+            View3DOptions.Rotation = 360
+            View3DWalls = False
+            Zoom.Animated = True
+            Zoom.AnimatedSteps = 10
+            Zoom.Brush.Color = x00FFFFFF
+            Zoom.Brush.Style = Solid
+            Zoom.MinimumPixels = 10
+            Zoom.Pen.Color = x9662ABD9
+            Zoom.Pen.Style = psDot
+            Zoom.Pen.Width = 1.162790656089783000
+            Zoom.Pen.Fill.Color = x9662ABD9
+            Align = Client
+            BevelOuter = bvNone
+            Color = claWhite
+            TabOrder = 0
+            Margins.Top = -3.000000000000000000
+            Margins.Bottom = 15.000000000000000000
+            Size.Width = 222.000000000000000000
+            Size.Height = 156.000000000000000000
+            Size.PlatformDefault = False
+            ColorPaletteIndex = 20
+            object Series1: TPieSeries
+              Marks.Visible = False
+              XValues.Order = loAscending
+              YValues.Name = 'Pie'
+              YValues.Order = loNone
+              Frame.InnerBrush.Kind = Gradient
+              Frame.InnerBrush.Gradient.EndColor = claGray
+              Frame.InnerBrush.Gradient.MidColor = claWhite
+              Frame.InnerBrush.Gradient.StartColor = xFF404040
+              Frame.InnerBrush.Gradient.Visible = True
+              Frame.InnerBrush.BackColor = claRed
+              Frame.MiddleBrush.Kind = Gradient
+              Frame.MiddleBrush.Gradient.EndColor = xFF828282
+              Frame.MiddleBrush.Gradient.MidColor = claWhite
+              Frame.MiddleBrush.Gradient.StartColor = claGray
+              Frame.MiddleBrush.Gradient.Visible = True
+              Frame.MiddleBrush.BackColor = claYellow
+              Frame.OuterBrush.Kind = Gradient
+              Frame.OuterBrush.Gradient.EndColor = xFF404040
+              Frame.OuterBrush.Gradient.MidColor = claWhite
+              Frame.OuterBrush.Gradient.StartColor = claSilver
+              Frame.OuterBrush.Gradient.Visible = True
+              Frame.OuterBrush.BackColor = claGreen
+              Frame.Width = 4
+              Bevel.Bright = -128
+              OtherSlice.Legend.Title.Font.StyleExt = {00070000000000000004000000}
+              OtherSlice.Legend.Visible = False
+              PiePen.Color = x2AFFFFFF
+              PiePen.Width = 2.325581312179565000
+              PiePen.Fill.Color = x2AFFFFFF
+            end
+          end
+          object Label2: TLabel
+            StyledSettings = [Style]
+            Margins.Left = 15.000000000000000000
+            Margins.Right = 40.000000000000000000
+            Position.X = -9.000000000000000000
+            Position.Y = -16.000000000000000000
+            Size.Width = 146.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Century Gothic'
+            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.FontColor = claLightsteelblue
+            Text = 'roulette'
+            TabOrder = 1
+          end
+        end
+      end
+      object Layout2: TLayout
+        Align = Top
+        Position.Y = 273.000000000000000000
+        Size.Width = 830.000000000000000000
+        Size.Height = 294.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Chart1: TChart
+          Foot.Font.StyleExt = {00040000000200000004000000}
+          Legend.DividingLines.Color = x00FFFFFF
+          Legend.DividingLines.Fill.Color = x00FFFFFF
+          Legend.Emboss.Transparency = 83
+          Legend.Font.Family = 'Cambria'
+          Legend.Font.Size = 12.927710533142090000
+          Legend.Font.Color = xFFC05417
+          Legend.Font.Brush.Color = xFFC05417
+          Legend.Frame.Visible = False
+          Legend.LegendStyle = lsSeries
+          Legend.Shadow.Visible = False
+          Legend.ShapeStyle = fosRoundRectangle
+          Legend.Title.Font.StyleExt = {00070000000000000004000000}
+          Legend.Transparency = 100
+          Legend.Transparent = True
+          MarginBottom = 5
+          MarginLeft = 5
+          MarginRight = 5
+          MarginTop = 0
+          SubFoot.Font.Style = []
+          SubFoot.Font.Color = xFF46A4ED
+          SubFoot.Font.Brush.Color = xFF46A4ED
+          SubTitle.Margins.Top = 4
+          Title.AutoSize = False
+          Title.Text.Strings = (
+            '')
+          Title.AdjustFrame = False
+          BottomAxis.Axis.Visible = False
+          BottomAxis.Grid.Color = xA94BC4E8
+          BottomAxis.Grid.Style = psDot
+          BottomAxis.Grid.Fill.Color = xA94BC4E8
+          BottomAxis.Grid.Visible = False
+          BottomAxis.LabelsFormat.Font.Color = xFF5395F4
+          BottomAxis.LabelsFormat.Font.Brush.Color = xFF5395F4
+          BottomAxis.LabelsFormat.Margins.Left = 12
+          BottomAxis.LabelsFormat.Margins.Right = 9
+          BottomAxis.LabelsSize = 22
+          BottomAxis.MinorTickCount = 1
+          BottomAxis.MinorTicks.Color = xFF1485CC
+          BottomAxis.MinorTicks.Fill.Color = xFF1485CC
+          BottomAxis.TickLength = 5
+          BottomAxis.Ticks.Color = xFF2AB5D3
+          BottomAxis.Ticks.Fill.Color = xFF2AB5D3
+          BottomAxis.TicksInner.Color = xFF4392B1
+          BottomAxis.TicksInner.Fill.Color = xFF4392B1
+          BottomAxis.Title.Caption = 'Generations'
+          BottomAxis.Title.Font.Color = xFF279DE7
+          BottomAxis.Title.Font.Brush.Color = xFF279DE7
+          LeftAxis.Axis.Visible = False
+          LeftAxis.Grid.Color = xD89BD1FC
+          LeftAxis.Grid.Style = psDot
+          LeftAxis.Grid.Fill.Color = xD89BD1FC
+          LeftAxis.Grid.Visible = False
+          LeftAxis.LabelsFormat.Font.Color = xFF56B2FA
+          LeftAxis.LabelsFormat.Font.Brush.Color = xFF56B2FA
+          LeftAxis.LabelsFormat.Margins.Left = 52
+          LeftAxis.LabelsFormat.Margins.Top = 27
+          LeftAxis.LabelsFormat.Margins.Right = 15
+          LeftAxis.LabelsOnAxis = False
+          LeftAxis.LabelsSeparation = 0
+          LeftAxis.LabelsSize = 30
+          LeftAxis.MinorTickCount = 1
+          LeftAxis.MinorTicks.Color = xFF30B5C9
+          LeftAxis.MinorTicks.Fill.Color = xFF30B5C9
+          LeftAxis.PositionPercent = -2.000000000000000000
+          LeftAxis.TickLength = -4
+          LeftAxis.Ticks.Color = xFF59A1E7
+          LeftAxis.Ticks.Fill.Color = xFF59A1E7
+          LeftAxis.TicksInner.Visible = False
+          LeftAxis.TickOnLabelsOnly = False
+          LeftAxis.Title.Caption = 'Fitness(Mean)'
+          LeftAxis.Title.Font.Color = xFF46A4FE
+          LeftAxis.Title.Font.Brush.Color = xFF46A4FE
+          RightAxis.Axis.Visible = False
+          RightAxis.MinimumRound = True
+          RightAxis.MinorTickCount = 0
+          RightAxis.PositionPercent = 3.000000000000000000
+          RightAxis.TickLength = 3
+          TopAxis.Axis.Visible = False
+          TopAxis.MinorTickCount = 0
+          View3D = False
+          View3DWalls = False
+          Zoom.Animated = True
+          Zoom.AnimatedSteps = 10
+          Zoom.Brush.Color = x00FFFFFF
+          Zoom.Brush.Style = Solid
+          Zoom.MinimumPixels = 10
+          Zoom.Pen.Color = x9662ABD9
+          Zoom.Pen.Style = psDot
+          Zoom.Pen.Width = 1.162790656089783000
+          Zoom.Pen.Fill.Color = x9662ABD9
+          Align = Client
+          BevelOuter = bvNone
+          Color = claWhite
+          TabOrder = 0
+          Margins.Top = 10.000000000000000000
+          Size.Width = 830.000000000000000000
+          Size.Height = 284.000000000000000000
+          Size.PlatformDefault = False
+          ColorPaletteIndex = 13
+        end
+      end
+      object Layout3: TLayout
+        Align = Top
+        HitTest = True
+        Margins.Top = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 830.000000000000000000
+        Size.Height = 68.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        OnMouseDown = Layout3MouseDown
+        OnMouseMove = Layout3MouseMove
+        OnMouseUp = Layout3MouseUp
+        object Image1: TImage
+          MultiResBitmap.Height = 41
+          MultiResBitmap.Width = 190
+          MultiResBitmap.LoadSize = 2
+          MultiResBitmap = <
+            item
+              Width = 139
+              Height = 41
+              PNG = {
+                89504E470D0A1A0A0000000D494844520000008B00000029080600000005CDDA
+                1A000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                0D6D49444154785EED9C7B6C1CC51DC7E7B177B6E338096901E1DA148448C443
+                0A260FF8A3519A5284502342028550F32CA5089C04481CDA62C03834E1119740
+                12933F4A046A48095099575B545514A220042189894441A4A2A27130AD1021E6
+                9238DEDB99E97CC733C79E6FEF7C77BE0413DF475AEDCCECECEE6F677EF39B99
+                DFCC1D25C7183B9A165CC208A96FE8D8DC6193CAE44157D3953F24CCBB9A48D1
+                8538E37CBC14A2375C8EBA5C8F2D3C4AAFD71FBACE4673B2E3969F4DB5C1510D
+                1A9824749C0CD47A934049EFBEC05F4389FAFBAEC58D779934CD31A72CF9B26B
+                61E3562F46B7E36C934625AFDFFAD3B11EE7674FEDD8FC3263F27C5892A0BFFF
+                B5895E7C71D2F7134152FD0DCA84BCA352598C4561E40726A2CFEFDE34EF2413
+                1E858CA3FC474A047FB251C3F4DFBFF0192C8B17AF983F75FD1F774099903E2A
+                950505402479D344F4198563C2A3108CEFCEE97876B78D4682B10BCE3907B83D
+                CB97EA1648E7E84CE71025BFA318EF5744ED56426D915FCA574E5EBDBACF661D
+                31EC5A785527616CDE94359B861CBCC3A28C6645015D0B175C8D6E07E5D0D5B4
+                A0494AF636D23DAE5AFCFEC34D48C7B84597E7CA48CBB2A76DE9F4CF56346FA5
+                9C6DA794DE4728BD540F8F67EAD2FF3123F456CED9B3B1EF7A7BB432DDF17AEB
+                2CCFDE5614A830740BE1C35E3AE28C76450150147437366A601EBDC529CA7B4D
+                574E9252EC417A46EBEB59B9A439A10E3E348E8CCBAF8B9262AB3A94BCACF681
+                B59FDB9421C1A06A02E5D731C56F231E39DD26A721256997426D365D46011462
+                59F2C54CC719BF84293911714954E77E295E9CFDF8F3074C060D949C71BA8011
+                799A49606CBBDF77E8C96F5221613574E3368A2009FB385B791A8B424837BA24
+                0C704DFDB078EB7EE9B7E1DCB06ED332E44B2BD0EEFB97ACF5185F68A3792388
+                FC27491C9E55F760C717362905349352F660A0D4531871A350310BB197895464
+                839BDB03CCEF4940AE0F29510B4CA00D67E09E6FA3A8A479E62CE50BE60C74C5
+                0D7E86BB4F29F9EBA83EDB4C19A59C6622EE9983D003C3C9B8B76B61E32AC648
+                B34D4E2310622EBEDB46D3801262AA9F4D86288692DB6166796E101F229B3C46
+                B1183F598AE02D297902DD10CA0D035DD72852D663CFBD8B1615A32880137616
+                ABAE7A4607335AB390BC06850DAD35856315450F9A166A416A1AD66EFA05B4D9
+                1DA8D4298F6F9AA4A76CD3B4D2FC4B675D810F87B6E3BEC1B8E7A70E4738CD55
+                7A08779F3947817BECFDB0729015D60A070A1C5928F73EEA5AD4F80414054AAF
+                2D496D2A8F955FCF245ECAD6B5A24C72CA10C190726B6029A02861B9211B06F3
+                90276AF6D7B06EF3D33ADF4A280AE2FB64702DE261EB6994E5C3653F9FE6C5E2
+                6B4C4A9150462FFC74F9921B6D340346F902088A305A2414232CC860602EF711
+                FF5C7C303E7C028F3F6A2FA5817CAE8270388B124E9BB2EE99B43EB910F07E98
+                E1B0AC68994619348C921BF14E287DB8CB815C7EF2D02C843D4E23653F52304A
+                2F80A286E5866C8150B7231CAF1A7303CE51406E1C51756394A582567652DD3C
+                860B65B26DF7A24515369A8E3589CE749BB42180C0A6BFD495814A81A9B4978E
+                1A41FFA1476C300D14A8534CA9646443B3CAA3CDF9D1F5E50482AE904C2CB7D1
+                144666106169F381752D6E9C575953556FE3C382D2586DF509B1ACAD185D4FBE
+                8A1206261167DDA76ECCD61D1D29720D50A552AFE1DCD0F1EC1B262102E7A360
+                5E55AD49380A4029D0ADD8688A94C2EAB188391708AB8AC5EF2F85557128C62F
+                B3C10CD0F5D86041C0C240D11086C7D12496290834B278C598E710860BDF2416
+                08F32A2ACEB2E192A0A760336D300D33F6180658D4C2598F7D229F5F263B1860
+                4F24F19D7628D092EA8E0A84797C583EB50C62849CB0A7F50EE38F4843894F6C
+                A8285CF795F263941912743B98AD9919A8474EC72C4E0FF8B3BA218682696CB0
+                74302E8FB7C1D282F51C4C67CB0C09F6A7E8594F0F26066E0A9DCDDF932F5A53
+                4AE6E84CA11F5A7A0D04929C687D2F6572603CCEDC7B1D614CF1074FFD8B8529
+                A5471925C63F4CF7DB6069815797C9F76DAC4C04E87A8C3F4B372A634D8A1C9F
+                44C184086CB0341CF4C9C153563EFA5F1BFD1AC61B6CA828CCB63F50E4B46FB4
+                A0272C17E02C69F0CB525893302C194863AE4A45559CBCA34F6A20F635E83B87
+                E598A2DE4F702A76DA3722A1C4F8600A418F07CFB0C16828378D2A97EFA75898
+                F0FD36A232EAB678947AC58632F02AC7DC6F8305615674B15027E50BA534ABDF
+                3454A96D38EBD9CA4526211FAC32C8A0AFC7C407E156C6738145D262B693B233
+                573FB9C50F82F76C7C78F8A44F1DE8DB68631914E3B2C72AAB5B7CC44AAB493C
+                4630EE00BB589A8FD54559B8B5A86C9E65E755CEB67869C0AABE5D7E2904336B
+                D12FB8A1D71FBE795131B9366A9B82A5050503977D78C7782EF0C158D945183E
+                8262960A463A0115666B03BCABB914C66C4D4895055D61122308FCFE4E9CB178
+                19B534621AEBC0F68F968194FC31CA726ADB63EF8D8DA9874C4A9108A9FEBD2F
+                D997B59BC11A89A2C11CE32BC1B6835B1B77638A17F5412818EC11711625D79E
+                906F3BF82EB7B20EBF082A335C260863CB8153142C7BE4EA8A075697C55C3C0F
+                5E5B94311A1D260803DB29F846D4819E2915BCCB20E50F796BD79EBBA5927FB5
+                D182D0F3A9AFF4C8F3B2B3DB1ECF39FA8665D827FD8B75B005DA8D29DE442F9E
+                40FF891D6EE658DCA85030668CA22D11FC04C7AAA238E007716B5FA84C5326BA
+                1C7020EC7E070525C8677DCD6CA180C2D83246A383DFC538E814D9803A2866A6
+                9452962B9E7F5E882FE4E54AA9C22AC6979F13155C54A7AD934DC9098484CBD9
+                6CC681D260991FFDA7DD680405414B9322988D4D50850E68B123CF157C2E3040
+                44BE6C03C57C9E83CDCDF9E6C9F61E0794007E1129C53503BB0775B9E80361A4
+                15EA81455EF33C5D8E783F9407658E7D37C54EA933DCB7ADAD84DDCC97DE2638
+                BBCF23649C4D8E048A2592FD4DF56D6BF7DAA40C6002A1D910B8D855E7322383
+                0CB77C5B1B91B5F7FE6EB5F283531591CD521A3F8CF1C84A9F2403413ED0DABE
+                3E19C819B577B7CFCDA528654629C5FEE40396057DAFD9175AE65B4D8665C9C6
+                ECB62DA55D1728F3AD236F65F926F8E4B7E79EF47EEB9939B751962ACFDE95D3
+                27D9A021D73D48C7751B3D6A40C6FF3C70EED4A1BE252C5F3EDF9E2F235A59BC
+                4AAF6342F5D8EB6C34122FEECD1F3FB62AE70664E4A9A9AC9C6CA319A002589C
+                7D142ED45CF7201DD76DF48803F97ADAA7EE561ED9C0635ECBC49A9AC4A7ABA6
+                AFCAA60461F9F2299F7C39E2CA929AA2DADFD0E60B5A9192EA78C6C46D362905
+                0ACFB59CC00F3A7B0FF4A556A2919E4FEB0BC362B15B84946F4E185393757F2F
+                9E97EBB9AED5BB30CE90C51DEEDA6090EEF2BB7318A431CE1F4D26D555F577BE
+                3BB3AE79DBFCDAE677A852F493093563FF803C783EE47267ADF86750AA4EC1BD
+                AE7C10C6BBDC81BCE6050570C495051E454C990BF597D018B98950798F52ECA5
+                BD0F9D67FE1F04EC6D9FD189C283D541C1842D005A1B8FF3E7065A5FD5CEF07D
+                D9308526E564E18B2B180F22F709E33968CDEEB99EC717D84B4689BA1F9EBE15
+                AD1E72B930AE4136C813AF8CF5E05EC8EE940D95D7D37E9E423A8BCB3F437612
+                A75FFFB2D2A2E2EC4E1A901BBFFF9B9D69E55777E7B60EAD311FE339C67A8C1B
+                7329DE33A1A2BA96087A33A572AE8AD3CB5DF9208C77E188C562DB292705FFDA
+                60447643A8407C6CFDB21D6F24FBC523E14A84B5712DECECB60F52CE25A718DA
+                8ADD2E92C10AB44445E5B2A15A50AC822FA18AAD3AE5EE9D9F0D564C80FBF19C
+                7D8944CD40ABDE314952769CBD4C8E1B5BDD8AFB21130EBC9F3396B648E7EE55
+                4AAC715D02144AFA72B27B262C85C93C084AD4C4BABBDE8D5C139344FE8578F4
+                4284B9E21BA5207391173248C91FAB6FDE96DA6F8BB09181CA4EA564FB60E5CB
+                8711A92CA84041F8533097680142B2FF75AF9A6A96E65131DDEDE73D816B26B3
+                45717289A2F434D77A7050463FF758F69F790E28256B1632F9299E2799DA05C5
+                B0970D6899B07061C594C9E4C0DF6969A422E7D7FDEA9D9467159520894AFDCE
+                9A12BAD9DD2B0395A08A9F656467F4D5B012C052D860FE305A4714ED46505071
+                4D588E2860D5B852F77E79E0609B4D2A8811A72CAE022921D3C2954E295F8CEB
+                2890DE44E2768C33C2568329F9252C0A5A8F3BF6270E5C9BAD5502A3947AAC92
+                7A8F62F3399327A629A2AE0C54B08D19388B7DCF060DAE6B713022CC3F256543
+                09D283EFB35143560B28C96B7B1F9E91E1A332EFD4DDCDFE43897F20AEADD487
+                E6420E600505A5CBC38A5F08A5FD1D4809404B462BA95FBA3DED1775E8EF5189
+                A8542805C61961AB81EE2A5E49B7E86EC4580ACEBDF375AD618B61E4AC05856D
+                BBBAB441A57B072A09712827C621BAC28810C1DB183C3245364A4906D684B4D5
+                195F5DFDAAB67CF798A8516A1AF937220E7479DDED33B6C342C24A41F9D0D54A
+                2D96CD92021607DFAEF33610153C0DEB04196021A460CDA878C83614F82E3442
+                E927A7996F543C91AB214531E22C8B62B4A1F7AB432FDA680A28081400FDBEB1
+                02DABC9B8FD52D1F1F8E0A903E9B43999C89EB8A91F1B02CE6669BC7842D183B
+                A095D9680A7423183886EFE93D78F0623C0FCF65924E112A98EDCC3FC6555018
+                28895114419F12440DEC15411E9B0F98E7B9FBF418824AD56564D55DA8196311
+                12B9BF1856920AF232A1DED54E06FFB09A95EA7642B282F07BDC3516F32E42F7
+                88FBCD3BF580D75C2F53A6F410F27F1E8886A382A3AB110000000049454E44AE
+                426082}
+              FileName = 'C:\Users\asiel\Documents\Optimus2.png'
+            end>
+          Align = Left
+          Margins.Left = 15.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Position.X = 15.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 87.000000000000000000
+          Size.Height = 46.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Image2: TImage
+          MultiResBitmap.Height = 35
+          MultiResBitmap.Width = 34
+          MultiResBitmap.LoadSize = 2
+          MultiResBitmap = <
+            item
+              Width = 34
+              Height = 35
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000022000000230806000000F11BD8
+                67000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                0574494441545847B5975D6C145514C7CFBD776676BBDD6D0101F92C08FDD845
+                1E34BCD8848FF080F1A32298166DB72524628851130C312809820123C6C43705
+                F1094B3FA42A98109510F9D00743A25103A1B514088D041AD0D2ED76BB3B7B67
+                AEF7CE9E4E77EDB6DDB6DBDFCB9CFF99D99DFFDC7BE7DC33900FF601500C270D
+                C1E3A4B8B7B122303340CF24A87894D9BCD2DBD475154F4D98293DC9CC42B691
+                51A8F40129D2885E85E94931B52165623E4640082CC6D0A5F3A952CFE08B154B
+                6538EEC88F692456B3ACC4AA0F1D4D34047B9275C1AB03D5650BF1540A213846
+                00B6D030721808972E5A3A47EBF21AF466B22ED491AC2D7B064F656554233C5C
+                BE4530CF154AE01503C85C8D9190E121413C9D42400CA311E8B658AC0359A462
+                8D41F980A69DB61A82EF4B997574B21AE175C137A394B5FA7408600A6C800B27
+                CDCE0B28531095CE8ED172FD171BC40994502CAFA640F658F5C1C3528E3033C2
+                08AF0BBDCC18F958FD105372D4E1587777ECE92D6D60612A277EEAEE084BA71F
+                F645860D534276580DA10F50BA641831C3A54F440722CAB18B05E25D76BC7DDB
+                23176FC5319533EB2F02678DED6F17FAEC67062016C5B4BAE96E35F5281D5C23
+                37D72DF1124A1B8B8B8A744CA99138A035761C403969F496BFCE185CAF9223E3
+                3E4C9258871FD495CC44396C647149C14E0D58294A3996A24D8E842C9AF9C168
+                E9BAE82F263B51829718B302D4B70B65CA4877F5A2020EC44D9A60F5F45BB11D
+                3214A94C7ED0BEB8FA997CC01F50429CC01B77363C5CA862C7C802BDE8050FC0
+                6C152B9825F6CE68EEEE4599579236DF35B47855459E3367468D8A1D2384D99B
+                D451A146A32379ED18CABCA3F6A34000BE4329EF4DABD5D131C209AC55478526
+                E889956DD2CF34228468C650AE5EB1E6FC3AD068FFE6657355E5C43CD8163987
+                E1C4206060342E8356C2BD879A9ECA05E5A5D4F0D08CFD8333F30A861383805C
+                66B91168BDD99300B88F121815CBA9AC1D3ED40E8309710FC3F1B1E920461232
+                A1AA2B5F08F73E846AB328D8449A9B1C9630DD464858E20F0C278E6DEB94D344
+                C608F83470D7CB78785ABB7EB704ECB684D873E35FFE29A673C2B286D7A50016
+                21276A803DE90DF5CB4DAE40253987CD7A4BFB29E78A69225AB3645EA1D77707
+                25242D6B35553BAADF16BF610E28830D184E1B5EA3603D86A08A5B84D89787F6
+                9AB37894354554ABF71AE5B4201B93973004BF5F5C99DDD415491534DB761B18
+                5553D62CACA8479977E2E18A8A7E20CFA294A6C84975748C785B3A3B6C21CEAB
+                582118DD7BBB6A7EC66B9D2F740A87E47A642AEE936BD634938D2A1E9A1AD97B
+                D8AA9F7490F3B26CDE8CE24328F306AF5D11A640DD7D2D00E29B822FBBAEABD8
+                35A23775FE281BA1D328A19F90D7797DD9569453C6AC5D5E19037E14A55AA471
+                D3E4EFA01C36A2482412AFC5813BDBBFEA59A324F6390F076B9D9353C0AC2B5B
+                CB35E3FB80C6DCE9F60760DFD06828328CF8DA6E746B96D8AAE64EE9622832A2
+                51725C76DE077F5D056E0B992BAA46F186D05B31163B2B8B947CB614B62DBED5
+                8EB77F84D221EB3706AF2F7F354AD827E99DBC74765996F1FD079B3B4EBD27FF
+                0BD3595106367BCBAB8820FB19A18F61DA417668E7EEF6F63DB7F0F49D8C6FA2
+                AC4614724AB647E9E0E16255F4D34872719B69E4A420D625DB14D76479BF0FBA
+                20CCA272E3D2CB08B557734A9E973D81FB393A847C339B6FC7A3DB4BBEFA3B6D
+                B34C31AA1185192E5B2327AF51076D09A626450C44C40364B7D6D87E045323C8
+                5823FFC768BAF6736FFCC14AF9361DEAE7D6A89F97A3A1DE0CB91E8EC84E68C5
+                582614638E483AAA932B28F46C93E35B13656455FAFA49A72F1249FAFD814B32
+                FC3A6E0EB6FADB6EDD4D9D199B9C8DA4D3B769C1433E5FE1E3444D19110120C4
+                96FFD42B8BE2F57F7A1EFC39FF6CCF005E9A2300FF01BD70EE09C9CDD6B80000
+                000049454E44AE426082}
+              FileName = 'C:\Users\asiel\Documents\Optimus4.png'
+            end>
+          Align = Right
+          MarginWrapMode = Original
+          Opacity = 0.800000011920929000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 15.000000000000000000
+          Position.X = 793.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 22.000000000000000000
+          Size.Height = 46.000000000000000000
+          Size.PlatformDefault = False
+          OnClick = Image2Click
+          OnMouseDown = Image2MouseDown
+          OnMouseUp = Image2MouseUp
+          OnMouseEnter = Image2MouseEnter
+          OnMouseLeave = Image2MouseLeave
+        end
+        object Line1: TLine
+          Align = Bottom
+          LineType = Bottom
+          Margins.Left = 15.000000000000000000
+          Margins.Right = 15.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Position.X = 15.000000000000000000
+          Position.Y = 51.000000000000000000
+          Size.Width = 800.000000000000000000
+          Size.Height = 7.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claSilver
+        end
+      end
+      object Rectangle5: TRectangle
+        Fill.Color = claNull
+        Position.X = 24.000000000000000000
+        Position.Y = -128.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = claDarkgray
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+      end
+      object Rectangle7: TRectangle
+        Fill.Color = claNull
+        Position.X = 32.000000000000000000
+        Position.Y = -120.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = claDarkgray
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+      end
+    end
+    object Rectangle2: TRectangle
+      Align = Left
+      Corners = [TopLeft, BottomLeft]
+      Fill.Color = xFFFF5D29
+      Size.Width = 73.000000000000000000
+      Size.Height = 571.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 20.000000000000000000
+      YRadius = 20.000000000000000000
+      object Layout4: TLayout
+        Align = Top
+        Margins.Top = 25.000000000000000000
+        Position.Y = 25.000000000000000000
+        Size.Width = 73.000000000000000000
+        Size.Height = 70.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object SpeedButton1: TSpeedButton
+          Align = Client
+          StyledSettings = [Family, Size, Style]
+          Images = ImageList1
+          Size.Width = 73.000000000000000000
+          Size.Height = 70.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = claWhite
+          OnClick = SpeedButton1Click
+        end
+        object Image3: TImage
+          MultiResBitmap.Height = 64
+          MultiResBitmap.Width = 64
+          MultiResBitmap = <
+            item
+              Width = 64
+              Height = 64
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000040000000400806000000AA6971
+                DE000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                050049444154785EED9BCD8F144518C6B7677A663F09125121211831BB2B0612
+                483868C8625CF00B120E2478E0C0810389C6C43FC7BFC12B01845DC0831AF740
+                8444A32E2B108809A8182533B3B3D3F3B13E4FD7B313976166BA7A7A77BB7BF6
+                9754BAABFAADB7DEF7ADEAAAAE9E9E817EC7D1715D595E5ECE22BD85F421F38E
+                E35C419A43AAFB0269A6D1686CA9D56A3FC0F955B08CD724964EE067AE5EAF5F
+                332EB7A26B3989A70FF4F0A7C6D5F65046E2E902BEE53DCF7B68DC6C8F64F2AA
+                961EE0D479DFC3609C57B574008772D56AF5BEF1AD3B924DCF5C80FBFA9C712D
+                38ACA3EAC906BEB8E8D1DF8C5BC1511D576A920B7AF2AC71C91ED6959A64021F
+                B2E8C979E38E3DAA9B95BAE4811E3C635C090F75485DB280ED19F4E0CFC68DF0
+                4847466A93037AEE63E342EF5097D42603D8EC6073F3A331BF77A46B4376AEA1
+                408F9D32A64707754A7DBC81ADECFD5BC6ECE890CE788F02F4D24BD8D25E3626
+                470F75B30D351709A1220A235EC4619C0976AD1C27CAE5F2E4D8D8D82865D68A
+                62B1581A1E1E9E771C6701D93B3AFA2993C9FC4D191BDA06000E6D5D718E89E7
+                7412CBD2F8D0D0D0365F28662C2D2DFD93CBE51610945581E139D2535FE8199A
+                018073DB913E41EF7E80FB6D62707030D2A1B6D1542A95BF5CD7BD83517215C1
+                F802E9892EF943FAB342A1504600FA02FA4A9FE9BB8393FDA552E926EEDDF4BD
+                85E900E6126F7474F4908399F52A86C5FB2AEF2BD0F933198C889DCAF71DF49D
+                011856BEEFA0EF18FD990BCAF71DF4DD41145EC012B180656FBBCAFB02F8FC04
+                3E8F67B01EFE9BCFE7CF60562CEB5AEAA1AFF499BE371F8430234E6339BCB0D6
+                8FB21B0D1FA5B1FC9DC4F0BFC1FCAA476104610ACFF39746464652F923E5E2E2
+                6201FB881370FE1B15B5EE051084B73134BEC2E95653921A9E62BEFB08CE7FAF
+                BC4FCBBB360A40F01837162A4A3CF4853E3DEB3CE9B41B3C80997236E9AB8366
+                FBF730AA6FAB68156D0340703BECC3F6F73A66CC975594283CCFFB13DBE3A3E8
+                F99F54D442C700100461AF8290A8476638FF48CEFFA2A2E7D23500044118AFD5
+                6A37A070978A620D3AEC77ECFDA7E13C5F88742450000882F01A82F03582F0AA
+                8A62099C7F00E7DF85F3F755D491C001209818777324A081D755142B60DB5DF6
+                3C26BC872AEA8A55000846C25134704DD958A1A5EEBAB281B00E001AC9626979
+                1CB7E551CBDD0E748ED5B786D63F3AAA01EBC0AD0330CDFE43CB302360070E8F
+                4C2E76EC44101EEB3C10D6230001D8AFD3D811C6B630BFBBEFD3318E58DB1666
+                04C43600616CDB0C808E8140030EB6966F2A1B3B681B6D54361056C27C1CC62C
+                7B4FD9588200EC09FA184C6C6F81D80EFFFF6165E36600740C449C27C0156C6D
+                DC0C808E5D8162B75C2EBFA16CCF148BC53AB6AFF34C3C5771CFD046DAAA6C74
+                F0D51814F74CA15068D4EBF52FA16F52AAA97B9265BC26B19EA0AD521D1DD07B
+                DAA80F8FBEF23A28952DF01A6524DE0BA7A5B22B36B7C06E9D5A03A7BE45FD23
+                D96CF638D6E85B2A6E81D7284359D651B13536B6DA4C828B3A06064EF0E3C6E3
+                AEEB4EC1B9E6CF51DDA02CEBB02E75A8D8066B5BBB82E179180605A25AADFE0A
+                797E2CDDF38B13EAA02EEAF4950780B6AA7AB4A03766D4C673F13CEF011AE7FF
+                8322FF9303755237DBF01B6B036D5495E88101AF60D99A535B4D2A95CA1FB8F6
+                39D2A044D70CB6C1B6D8A69A6F02E76771CDEAFBC630AFC4F8C7E71348D3C8F2
+                038BEF70BC88FBB6E40BAC13687F843620BD836C8D76205D466A18894D023030
+                F01FE1C71C09653CFF760000000049454E44AE426082}
+              FileName = 'G:\AProyectos\LED\Imagenes\estrella (1).png'
+            end>
+          Align = Client
+          HitTest = False
+          Margins.Top = 12.000000000000000000
+          Margins.Bottom = 28.000000000000000000
+          Size.Width = 73.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          object lbStart: TText
+            Align = Bottom
+            HitTest = False
+            Margins.Bottom = -17.000000000000000000
+            Position.Y = 34.000000000000000000
+            Size.Width = 73.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Start'
+            TextSettings.FontColor = claWhite
+          end
+        end
+      end
+      object Layout5: TLayout
+        Align = Top
+        Position.Y = 95.000000000000000000
+        Size.Width = 73.000000000000000000
+        Size.Height = 70.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Image4: TImage
+          MultiResBitmap.Height = 64
+          MultiResBitmap.Width = 64
+          MultiResBitmap = <
+            item
+              Width = 64
+              Height = 64
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000040000000400806000000AA6971
+                DE000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                089249444154785EE59B6B6C544514C7E9EEB6FB68115A0D6F43C55024C16240
+                21226FB024121363341A8D899FF59B9F34F18346E327FDA01F4D7CC5C4081212
+                35804AC458414402962801CABBE5519552ECB6FBDEADBFFF7696F4B1DB6EF7CE
+                ADBBF84F4ECEDCD97BE79E73E6CCB9336766ABA6B88C818101BD230835517E00
+                BA8FF242F8EDF04C5555D5DFF0DFE1BFC08F7A3C9E8BF04983AB06C86432F360
+                0FA1EC16F85DF07A685A3A9DAEF5FBFD35B1586C008513502F06E881AE4047B8
+                7707FC3C14533B6EC21503A0A4175A4571037C5D229158160804A60FFE5A187D
+                7D7D31EEEBC020ADD02E9E3D04BF6A7E2E7F207015BD3E15BE9A5EFE10C53B28
+                97049EDF4D5BCF42334CF3E50F840D422B53A9D4017A336C742919B4D34A7B4F
+                51AC815C8F578E80801E845DA79E0B87C311282D259C8036A218E1271955C635
+                AF2A4F20E00A947F2F1A8D762378C6E8E018B4779D76BFA4780FE433AFB3068F
+                E18E8060F5B0F518A18520D650575767CD5DF180697C2DD6F38E87A1D9A6DA1A
+                6C19A0195AE3F3F916992A6BC0981A5A75D0137C1617F11EAFF9C90A1C1B0081
+                3CD056045C62AAAC4346F07ABD6B794F13975663812303A83720B9FFFDB8A926
+                3DAE8277CD87597D8F530FA8C62D1B116C3ABD643D40E5C102DE75A7295B8153
+                0FA886648080A97215BC673E069F6B2EADC091011046BD3E13AAC956B80CE2CC
+                0C8C7087B9B402A71EA0CF5D1D64353217020608C1AC7A9B530F188069C596C9
+                56B80C16461198D515A2530F48C3B49E4F642B5C0606B802FB73F0CA0E9C7A80
+                143F0B8F0ED6B80BDE731A3A6F2EADC0910140D2087599D59FDCD335D07E94F7
+                1CC7EBCAC70008948694C9690D0683E74CB575A07C86F6CF52FC837769185883
+                530FC86127821D4550C504379062FCBF0BFF8DF728F05A832D035C42B0AF42A1
+                D077E6DA1A92C9E415DA95F23FF28EEEC15A7BB062007A270EFB1901B7B1763F
+                28971DFCA574C89B580AB7B308DA4EBB9F50D5019F94AF4DC960A2329720F53C
+                821F8946A33DE17038C5F584A16769E318C67C9336B502AC1C20B0F282CB107E
+                97B2393242311922DD63EE8DEB59DAD84AB56699AEC27AA211A135AC02702D5A
+                96C35B5068733C1E9F57285384BBC788F22771F1EFA156A89DE7B447D007B93A
+                CB742DD36A0CD1006F84DF0DCD8194325742C347DCD01723C6753FFC06A4FCFF
+                0514BE040FC3DDFAA20C43C90640703DEB832B212205674153A16A28D76BB9F6
+                B558923BE7B2399ACFFF03FD057589A3702F5CC13409A5B8B6FAB92B84091B00
+                854390F6F5B4D3731BA42DAF16A819579F4DF00AD2BB29DD0BAA028140F61D91
+                48846A4FD2E7F35D473929AC1EBF0CCF1A00BA0EC908F208457BCD3255565D1F
+                1477C328451B000575AF7A7229F424CA6E81E6D4D4D4F819C3B54E32423C2FC3
+                F4F3C993EB2715482977536E83F671CB7EF865B83C276B045BC628CA0008D400
+                5B89115EA4176731399949509317C8DDD586A750802B061840CA68D8E448F123
+                8D512290A6DA57212DB8BAE087E0FBE0A720C701724CA1515849CFD5500B97CD
+                B1586C1DC65042C2AB4C6DF626978171A4A486441A6FEB873A91A19D6B054C19
+                E3305C8629C918050D80D20A701BA1A771F54DF4B8525141273D6D0339835457
+                57F741DA3DDE8F8CC7A9D376FA49B81668450F8F51CAD098EAFCF0C5D05B4C66
+                E4011AE3FFA9E2F9206330447A31C469628662C5E7D005FD8411728178624059
+                B9FD02A2791BB3B228E58A00B246884DCA173CC610517C2A0AC3C6310F6B9747
+                3BB1EF33DEF56D9F946CAF25F891B991E1FA0A3ABC8A0E6B4DFD981819C8B4C7
+                F7380DAD80CBED2725D0D9809135C890BD17E51F41FE67E00ADE63E2A6823C50
+                052D8536F160A81CC7FC7890CC50509E800E9BD1E551F83C78C139CAD01ED64D
+                7318478D343229797EB780FC3A80A5A5F94A2E7540ABE05EC2500368D3C147F4
+                D45CBCE28111020C872578C00B184253F6BCA898315E22349769A053576088BC
+                5F86A131402B302D401C4F2FCB085E3EE7D3517E03E5BCA7CD6E1A00C5133282
+                B9BC25C030F060805AF45ACEA5D633A3307408641310DC5CD101300F34B751AE
+                226F201CEA01727D2F13894A9AFC14031DDECC06F8C1CBE11819044F070281A3
+                A67CAB40B986C3F0BC7B0A230DA0ADA71F229148AF59A35734CC62A91F9DB4A9
+                A2ACD3280C33003775C0DA58735F83DF0A5F838CB24C707980526EA330D2004A
+                3975B1C63E058F57B21718D9E3E8A2F304DA51567E7114460E011941C3E0F560
+                30A887CA7B2B6A6CA4D0E10206D84159FF47C8DB99A30C00E4056778F0231A38
+                8125AD1E4999446852770EDA06153CBB90CF03F43716A5A2BF862B1EF454DA50
+                40DE782814D29F2E3EE5B2133D0A4EF0F279808C90E4E176F83744D163545584
+                17A8A3A43C9E7B04D9B753B50B3E66E7E535400E3CFC05B49306CFD07059AF12
+                8D972699C768DC7F407937B28F7B6C673C03E853F8199F923768B85346302F2A
+                47A4FC7E7F17B2BE43792FB2EBF4DAB81837EBC33C5A9922A5C45731A57C89A9
+                72532291D07F02CA62CA6C3A44BBCB6DF4FCDB947F45796DBD15F5052B3AED85
+                11EA20FD69610D2F5ACB8B176304CDB1FF1318C52378E625E43984C2BBB9DE03
+                9FD096FA84F37E7881F606B561B2116F586AB6C8025A7A666F701928AE556B6E
+                63447B866D5CEB5CC1C189289E4349894F94D7DE8112A8CF41FA9758533299D4
+                D6B8B6CC5C594E1BC507F82C7733CE755EE822F41A759AB3685BBD24946A003D
+                A7E5652DD48057BC4CDD8318421BA7F5B68D2077A7B7AFA1782FCAEE813EA65A
+                E706B56D3EA1ADB09128C90039E40C015F88103ACAAE3F34ACD15E22BC1AC3D4
+                6014ED274EF86F2EAC48C3289AD462063A40792F6DEA3C41273FCB03AC9C4C75
+                6480A140380D0B2520F5C7A666AAB4753E8DB27271FA4F818EC76898643946AA
+                C55B1444E52D034CB8E4C6190C564F606B47618D6FF5720F7482B236406FC0AD
+                A6EDAC196024505241F1A601105CE785949713D7B19ADC09130D25052FEDFF6B
+                9CEB5EFD81FA5BB81666AE9E41FE9F63CA947F0151F0A9A47B94126F00000000
+                49454E44AE426082}
+              FileName = 'G:\AProyectos\LED\Dise'#241'o\person.png'
+            end>
+          Align = Client
+          HitTest = False
+          Margins.Top = 12.000000000000000000
+          Margins.Bottom = 28.000000000000000000
+          Size.Width = 73.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          object Text1: TText
+            Align = Bottom
+            HitTest = False
+            Margins.Bottom = -17.000000000000000000
+            Position.Y = 34.000000000000000000
+            Size.Width = 73.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'About'
+            TextSettings.FontColor = claWhite
+          end
+        end
+        object SpeedButton2: TSpeedButton
+          Align = Client
+          StyledSettings = [Family, Size, Style]
+          Images = ImageList1
+          Size.Width = 73.000000000000000000
+          Size.Height = 70.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = claWhite
+        end
+      end
+      object Layout6: TLayout
+        Align = Top
+        Position.Y = 165.000000000000000000
+        Size.Width = 73.000000000000000000
+        Size.Height = 70.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object Image5: TImage
+          MultiResBitmap.Height = 64
+          MultiResBitmap.Width = 64
+          MultiResBitmap = <
+            item
+              Width = 64
+              Height = 64
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000040000000400806000000AA6971
+                DE000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                04D549444154785EED9B4F881B551CC73733212B211EA5DA2D2DEE493C0952B0
+                5054DA83B6EE2AE8A12048A154289EEB55F16C29C5831EBC955250E8415AB608
+                5A5A2F1EF62216411016955AA11E379B4D7637BB7EBEF37E09BB24F32769FECC
+                ECEB07C2BCDFCBFBF3FDFDF2E6E5CDCC9BD2CC98D9D9D9A9F13941729EE3418E
+                D1677B7BFBE0C6C686D233954AE56110040F49469F52A9A4E30AC73B7CEA2A53
+                28706E8ECF8576BBBDB4BABADAC4F1A1505DB5A1B6D4A6359F4FD05B45E4C5AD
+                ADAD65846F3B174687DA54DBEA03B36ADD4E1FC484883ACF70FE27523A01E8EB
+                017D9E2319988CE9808885CDCDCDDF9CACC9C388B88F8653266772D0E911FABF
+                EB644C1FE6891FD074C8E48D17FA3BDE6C361FB9AEF343ABD5FA97201C3399E3
+                810ECE3119B5ACCFDCA17F0D349E35B9A383B64386D965D74DFE41EB250EA1C9
+                4F247521A48688EA0D162AEF58562140F377687E8F8554DBB2FA92FA3742439F
+                17CD7921CDD26EE670D080FE6B0B8D7C3077FA123B02A87B7C6D6DED2B330B8B
+                7C902F66F6D0770E206A47586D2DCFCECE3E63598586BFC8FFB8E03ACA69F197
+                6575E91B00227697C36BCEDA37DC63427CDDD25D7A02C0AFBF40C19B66C6C232
+                F4F7300CBF26B94CF955973B59F8A19EE67094BFBD0FCBE5F20B2E371ECA2F32
+                0A6E99D90B05C22C6B7B3ABCCAE129AB3675A4C5342562BEC5AF0FF8F5CFBBA2
+                F1D0C81F1CF273396A4893694B443E5A95BDF05D35CB252D0D7C62557207A3E0
+                3393198BF9D8FD01BB73008E5DE45C4E5D3850F92DCEA32533D5E937D86F9839
+                51D0FC3DF3D0193365BF8B0F37CC8C051F3E46F325331DBADBA2086560CF4C4A
+                44FFB4FC89A3BE4D46040178D3BE4A44BE5A15B710A2E2DCFAFAFACB518E07C8
+                57F9AC746725B858ABD5522F8CF60BE6EBA2D2510018156FEBE8131D9F0312B5
+                46A3A1FBF65E219FE5BB02708221316BF9DE209FE5BB4E817997E525F31A01D1
+                E3291F91EF1A01DE06009E04206041E06D00E47BC072D2DB00C8F7CE4AD05B02
+                6D4EB0B477D8C68C68678697C8779D02DE06009E042028B90D495E22DF350256
+                9CE9252B1A0177EAF57ACB32BC413ECBF7E82E50BBDD5E6246CCB4D7860B8833
+                94FDD64CADA63E22EF5533270A0EFC84962FCD94960FC8BB6A662294BD1D86E1
+                E98E7101273241B0AE44957208DABE3099A9C867AB1605602EEBDE3ECAD529FF
+                BC55CD0DD2246D263311F92A9FADAA6380DBE2BAADFC2B0DBC6855A78EB44893
+                C94B65F76DF1811F8C7460126956ABD51F49FEC27998BA9F977EFFA6DC753313
+                41CBFB68396C662C94AB7178A9D1689CACD56A999F55A2A5F7C108997A34F640
+                111A137AE49E09957555460F3EEE7934D6BD1A24E28D72B99CDBE77EA3021F3F
+                95AF66EE85C8049C1FF7A3500D0933F13586E6016B7264D0E6736ADBBA198AD4
+                C7E3828E4EB9E243937AEE0E8BDA765D0C07BE2D58535D7A6E883039DCA6A026
+                B7A1A09F93961C398FD9F63D7CEBD91DD2F779200138C47059AE542ACF5AD640
+                30547FE63C7B64E648C0F903ACDC5E317320923649C542108E69EFAD864E91C1
+                07ED6D8EDD2697084138EB9A292EF890B851321586B3361E1712B45F36376249
+                DD13403BFB7AB37426140445330A6B01B0519B69BBFC40E87CB249259768D2D6
+                BC6572C703FDF8FBCA4C073AF2F7A5A9DDD0A99FAFCDED061DFEBE38B91BC4F8
+                F9EA6C3F10599897A75317428F0B7EE4F8F5F99999FF01BDB1CD00F555D04E00
+                00000049454E44AE426082}
+              FileName = 'G:\AProyectos\LED\Imagenes\ordenador (2).png'
+            end>
+          Align = Client
+          HitTest = False
+          Margins.Top = 12.000000000000000000
+          Margins.Bottom = 28.000000000000000000
+          Size.Width = 73.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          object Text2: TText
+            Align = Bottom
+            HitTest = False
+            Margins.Bottom = -17.000000000000000000
+            Position.Y = 34.000000000000000000
+            Size.Width = 73.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Clear'
+            TextSettings.FontColor = claWhite
+          end
+        end
+        object SpeedButton3: TSpeedButton
+          Align = Client
+          StyledSettings = [Family, Size, Style]
+          Images = ImageList1
+          Size.Width = 73.000000000000000000
+          Size.Height = 70.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = claWhite
+          OnClick = SpeedButton3Click
+        end
+      end
+      object Layout9: TLayout
+        Align = Top
+        Position.Y = 235.000000000000000000
+        Size.Width = 73.000000000000000000
+        Size.Height = 70.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object Image6: TImage
+          MultiResBitmap.Height = 64
+          MultiResBitmap.Width = 64
+          MultiResBitmap.LoadSize = 2
+          MultiResBitmap = <
+            item
+              Width = 51
+              Height = 51
+              PNG = {
+                89504E470D0A1A0A0000000D49484452000000330000003308060000003AA130
+                2A000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                0784494441546843ED996B88555514C767EE75E6CE38663E4B4BAD417B90A668
+                4191F6904A70822233B329B00F61691284440FA32894429194342912FD909662
+                9416F5213211A72F5958F6B212E9613E284B31E73DD3EFBFCFBAFB9EFB98997B
+                EEBD3E08FFB0EF5EEBBFD65EFBBDCF3EE7969DC5198A72CB4B86CECECE5E6495
+                E49D01D335CACBCB9B483DFA9D72D0F63EEDEDEDEFAA13F9A2B1B1B1A9A3A3E3
+                11C4920F6A51686B6BDB1534B120CCB63045A12423C2E80E67B9FC6AF272E475
+                883D2D9F6A7C57C6E3F12B918F52A65F409F66D0A88936C24285D13D827263AD
+                8C506974C1E87666A82C4156D3DD26A51115A49763B1587D535353637575756F
+                E3E3A4E9887DA51B1AF0FBCE64C51F46ECDF249BEFA7DDD56590FD187E1D81DA
+                03083C84CDFC01792450E62D0BA186D6199D093F80C87D022A3AA86B910D76D7
+                C0E1324E99362B93373800BE21F3EB9E38B5997168C0C766F6805B6AE6C8686D
+                6DDD47E6568290B6CC3054B0540E555555F527FF977C1EDC5798DA028F9CD074
+                1F60F91C09D414281B238B079A7BAEB49A98063A3E806C28762DD9F032CB2557
+                E33293FA1E9342D9F739446E779630304C57308D28F260A30B026162A4734943
+                88751EB91FC1528098F5C474401E66740A4CF90619C9171B9513B89493B4DE07
+                A9D3A41AE45EA44AE42994DF829C0506E938B6E5F8E8382E0A842BD7433788DC
+                79B7D129B0EE3F9785CAEE33CA03AE2FE91ECCDBE4532CB4C7887785852F08C9
+                073571E649D79ACE057FECE13894D15CCD7AD683ED6DA81B034BCF6083EEA7AE
+                1B4897A05E4FFE4C7373F35FB2B1CE4713EF5BE23F0D9FB677E1FAC275D5B630
+                BA3E9E433373AF82913F25BD18D0F83F8833C1AA70CB037D3207CC9F81875BD6
+                6F9069E9F6A60D5F8B931DBFECBD1002BE5FCA173F373369487686E04B911B24
+                87A18301DB0AC45B482348FD09A4511C44BA1CB99E723B90B3806D01999F01F4
+                04B13E0CACCEFE1CFAE29696965F90C7216F6166BF37F79CC8AB3399A0132728
+                A0FD92D75505DFC1346655503A05B8D564E187660C6E93331AD097C9468CA946
+                A52DC130227786E0EF901574AC52C96896CBE1205200E22D37B303542FCD4060
+                F5B3BF4AE5C8F54AA1674FCE447BF5A0CEDD1982EE95310982BD60A682414535
+                54EAF64112707799D9017DA4990A425667206E339B031D5964260F7C743CD763
+                DBCC081E919F3638FA06F83B5173CE207C1503B547FE49E0AFA7BE07D4C6C012
+                1DC44A750625A17D613675E423B2F0DA8EE3F3AC6C5AA7C873499349D790A66A
+                06939D43D71528EB58851F804F8B7C040D80991CB08F375364A84E0BE302CD35
+                3E799539C74CB26999EC223520D71A9D058AEAC89DAA41C1773B72D68D162E6D
+                F6C10833C996302E32281B7406394E038E07B4333CE40C4015681F318A4B3075
+                79AA84815F3F6D68CD2072D6E907EFF70F715F31DA21FCEC8902DF198409C639
+                A0573B03A0B22DA4D74DCD1BC4A8612F1D24DC5AA33CE06E7215A5E03BACD937
+                2E127C6768EC22E334526F3A12A04ED2E626D7A7A3C8A082D18A493ECE280728
+                1DAB1EF233933AB3DDE848F09D091FC790758E045A0EE8534C2D080C8E6EE1DB
+                4CF5800F3FF91F34BACC062F327C674C7780BC481CF940A3B26605DB50D2741A
+                B490B482F43CFA1DA4F3CDC5036E8C829087BF03887FD445079477CB18D17D38
+                2C04C4CBD9195729E2242AD9EC1C0CD846F5B4A6B1EFC0EF522BE29714DC78A3
+                1CD0FDF70195316E9C51914159D799B4E70157F216E5D86B911B4CD691BB00FD
+                27AEEDD789EB0AD827E2B707FF27A423B772713C80385C7A12F0C74C547CF746
+                4BFEA4238A405A67D47013FB90FE367D0D952F746C9EC0FF2566F655C974F030
+                99E27910D7D7AB0ED3F95ADEE9671A5530326726F9A03B4A1A4CA5F3C9673926
+                2268DC1C1A398765A47712C50B63A0E50EF8A52DE98241833D08EAD63BF9B599
+                B7DD6240BCB4777E74BD5D960CC40BF60CCB61B7AB2180DBA8CCD00F8944A2A8
+                AF3361106FAF890EE8D34C2C29580D317FE1A393EE2A4365FFD0C9CF1C592418
+                B5F78877C254E9356457055AC910C427B87B162481EEAEE6E405DF62C3208E3E
+                6678A0CF3053C940CCAB5D70E458F2FA2E30232F3A03405E637441A0FC120BE5
+                00152FE55E142C9EFF6AAAD19A159802A05F281E511FF6763A3222E8C856B2B4
+                D392B8FA97ACA42066FA0745387D63F6D76F8E53BD5BBBAB0C79A5352C6FE0AF
+                77F7B4AB10958E0AACA581DA4BCCB116DEC1BFA360D0D3DB5D2D04F4F51C0EF7
+                C3A9AC7E6673115C595555959AD20C504133A7E02CCA6C5439A3156B00657FD6
+                0779E9DC0A0E5554543C2E93F4886825F68FE4BBC9DB032A07B4C6D5F224D0F5
+                65C6BF6FD0A804A90EFE35CD1E8DFA1DFB4EF465F093C3BE49C05F90B94FE08A
+                FA2C9B17A8A79C86E9FDDF8357847D54EE2F8FF982A2BAD34D0BA2A40037C35C
+                4E3EA8AF820E7D12549D02DC1A1AE25E11BA03AEFAF8319199CBF5EFF303E676
+                5290F3BD9E4AF59D79257BE661A33C98A9FD5C1ED7B25EBF403D486A26E903C8
+                C594BB95A53733735FD95EBA9978EE267E5A4087A6843F76140266741D71FCD7
+                9ED30ADAA33F90E644ED149DD844B99116E6CC02EDD3D21B439A4F43B7D2B9E4
+                BF560E3A28E05761AF23A5BD269F2AE4F52DAC2BD0073DE195DAC3CF95B3388B
+                FF2DCACAFE031E51809B56A5BF030000000049454E44AE426082}
+              FileName = 'G:\AProyectos\LED\Dise'#241'o\SSS.png'
+            end>
+          Align = Client
+          HitTest = False
+          Margins.Top = 12.000000000000000000
+          Margins.Bottom = 28.000000000000000000
+          Size.Width = 73.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          object Text11: TText
+            Align = Bottom
+            HitTest = False
+            Margins.Bottom = -17.000000000000000000
+            Position.Y = 34.000000000000000000
+            Size.Width = 73.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'As Image'
+            TextSettings.FontColor = claWhite
+          end
+        end
+        object SpeedButton4: TSpeedButton
+          Align = Client
+          StyledSettings = [Family, Size, Style]
+          Images = ImageList1
+          Size.Width = 73.000000000000000000
+          Size.Height = 70.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = claWhite
+          OnClick = SpeedButton4Click
+        end
+      end
+      object Text3: TText
+        Align = Bottom
+        Margins.Bottom = 15.000000000000000000
+        Position.Y = 534.000000000000000000
+        Size.Width = 73.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'V 1.0.0'
+        TextSettings.Font.Size = 10.000000000000000000
+        TextSettings.FontColor = claWhite
+      end
+    end
+  end
+  object Rectangle9: TRectangle
+    Fill.Color = claNull
+    Position.X = 440.000000000000000000
+    Position.Y = 120.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claDarkgray
+    XRadius = 12.000000000000000000
+    YRadius = 12.000000000000000000
+    object Text8: TText
+      Margins.Bottom = 15.000000000000000000
+      Position.X = -88.000000000000000000
+      Position.Y = -3.000000000000000000
+      Size.Width = 81.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Population Size:'
+      TextSettings.Font.Size = 11.000000000000000000
+      TextSettings.FontColor = claSilver
+    end
+    object lbPopulationSize: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 0
+      TextSettings.FontColor = claChocolate
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Size.Width = 127.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'Max: 100'
+      StyledSettings = [Family, Size, Style]
+    end
+  end
+  object Rectangle10: TRectangle
+    Fill.Color = claNull
+    Position.X = 440.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claDarkgray
+    XRadius = 12.000000000000000000
+    YRadius = 12.000000000000000000
+    object Text9: TText
+      Margins.Bottom = 15.000000000000000000
+      Position.X = -88.000000000000000000
+      Position.Y = -2.000000000000000000
+      Size.Width = 65.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Elitism Size:'
+      TextSettings.Font.Size = 11.000000000000000000
+      TextSettings.FontColor = claSilver
+    end
+    object lbElitismSize: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 0
+      TextSettings.FontColor = claChocolate
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Size.Width = 127.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'Example: 5'
+      StyledSettings = [Family, Size, Style]
+    end
+  end
+  object Rectangle11: TRectangle
+    Fill.Color = claNull
+    Position.X = 440.000000000000000000
+    Position.Y = 184.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claDarkgray
+    XRadius = 12.000000000000000000
+    YRadius = 12.000000000000000000
+    object Text10: TText
+      Margins.Bottom = 15.000000000000000000
+      Position.X = -88.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Points Crossover:'
+      TextSettings.Font.Size = 11.000000000000000000
+      TextSettings.FontColor = claSilver
+    end
+    object lbPointsCrossover: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 0
+      TextSettings.FontColor = claChocolate
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Size.Width = 127.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = ' Unif 0 to Chromo Size'
+      StyledSettings = [Family, Size, Style]
+    end
+  end
+  object StyleBook1: TStyleBook
+    Styles = <
+      item
+      end
+      item
+        Platform = 'Windows 10 Desktop'
+        ResourcesBin = {
+          464D585F5354594C4520322E35010609456469747374796C65038E0906144564
+          69747374796C654C6162656C5374796C6531030101005450463007544C61796F
+          757400095374796C654E616D650609456469747374796C6505416C69676E0706
+          43656E7465720A53697A652E576964746805000000000000008906400B53697A
+          652E4865696768740500000000000000C803401453697A652E506C6174666F72
+          6D44656661756C7408085461624F726465720200001254416374697665537479
+          6C654F626A65637400095374796C654E616D65060A6261636B67726F756E6405
+          416C69676E0708436F6E74656E74730C536F757263654C6F6F6B7570061B5769
+          6E646F7773203130204465736B746F707374796C652E706E670A53697A652E57
+          6964746805000000000000008906400B53697A652E4865696768740500000000
+          000000C803401453697A652E506C6174666F726D44656661756C74080D416374
+          697665547269676765720707466F63757365640A4163746976654C696E6B0E01
+          0E436170496E736574732E4C6566740500000000000000E001400D436170496E
+          736574732E546F700500000000000000E001400F436170496E736574732E5269
+          6768740500000000000000E0014010436170496E736574732E426F74746F6D05
+          00000000000000E001400F536F75726365526563742E4C656674050000000000
+          00008607400E536F75726365526563742E546F700500000000000000A8054010
+          536F75726365526563742E5269676874050000000000008097074011536F7572
+          6365526563742E426F74746F6D0500000000000000D8054000010E436170496E
+          736574732E4C6566740500000000000000A002400D436170496E736574732E54
+          6F700500000000000000A002400F436170496E736574732E5269676874050000
+          0000000000A0024010436170496E736574732E426F74746F6D05000000000000
+          00A00240055363616C650500000000000000C0FF3F0F536F7572636552656374
+          2E4C6566740500000000000080C707400E536F75726365526563742E546F7005
+          00000000000000F2054010536F75726365526563742E52696768740500000000
+          000080E4074011536F75726365526563742E426F74746F6D0500000000000000
+          A5064000010E436170496E736574732E4C6566740500000000000000E002400D
+          436170496E736574732E546F700500000000000000E002400F436170496E7365
+          74732E52696768740500000000000000E0024010436170496E736574732E426F
+          74746F6D0500000000000000E00240055363616C650500000000000000800040
+          0F536F75726365526563742E4C65667405000000000000008508400E536F7572
+          6365526563742E546F700500000000000000A2064010536F7572636552656374
+          2E5269676874050000000000008098084011536F75726365526563742E426F74
+          746F6D0500000000000000DC064000000A536F757263654C696E6B0E010E4361
+          70496E736574732E4C6566740500000000000000E001400D436170496E736574
+          732E546F700500000000000000E001400F436170496E736574732E5269676874
+          0500000000000000E0014010436170496E736574732E426F74746F6D05000000
+          00000000E001400F536F75726365526563742E4C6566740500000000000000E4
+          06400E536F75726365526563742E546F700500000000000000A8054010536F75
+          726365526563742E5269676874050000000000008082074011536F7572636552
+          6563742E426F74746F6D0500000000000000D8054000010E436170496E736574
+          732E4C6566740500000000000000A002400D436170496E736574732E546F7005
+          00000000000000A002400F436170496E736574732E5269676874050000000000
+          0000A0024010436170496E736574732E426F74746F6D0500000000000000A002
+          40055363616C650500000000000000C0FF3F0F536F75726365526563742E4C65
+          66740500000000000080A807400E536F75726365526563742E546F7005000000
+          00000000F2054010536F75726365526563742E52696768740500000000000000
+          C6074011536F75726365526563742E426F74746F6D0500000000000000A50640
+          00010E436170496E736574732E4C6566740500000000000000E002400D436170
+          496E736574732E546F700500000000000000E002400F436170496E736574732E
+          52696768740500000000000000E0024010436170496E736574732E426F74746F
+          6D0500000000000000E00240055363616C6505000000000000008000400F536F
+          75726365526563742E4C6566740500000000000000E107400E536F7572636552
+          6563742E546F700500000000000000A2064010536F75726365526563742E5269
+          676874050000000000000084084011536F75726365526563742E426F74746F6D
+          0500000000000000DC0640000013546F756368416E696D6174696F6E2E4C696E
+          6B0E00000007544C61796F757400095374796C654E616D650607636F6E74656E
+          7405416C69676E0706436C69656E74064C6F636B6564090C4D617267696E732E
+          4C6566740500000000000000C000400B4D617267696E732E546F700500000000
+          000000C000400D4D617267696E732E52696768740500000000000000C000400E
+          4D617267696E732E426F74746F6D0500000000000000C000400A53697A652E57
+          6964746805000000000000009E05400B53697A652E4865696768740500000000
+          0000009803401453697A652E506C6174666F726D44656661756C740800000754
+          4C61796F757400095374796C654E616D650607627574746F6E7305416C69676E
+          07055269676874064C6F636B6564090B4D617267696E732E546F700500000000
+          0000008000400D4D617267696E732E526967687405000000000000008000400E
+          4D617267696E732E426F74746F6D05000000000000008000400A506F73697469
+          6F6E2E580500000000000000AA05400A506F736974696F6E2E59050000000000
+          00008000400A53697A652E57696474680500000000000000C804400B53697A65
+          2E4865696768740500000000000000A803401453697A652E506C6174666F726D
+          44656661756C740800000C5442727573684F626A65637400095374796C654E61
+          6D65060A666F726567726F756E640B42727573682E436F6C6F720708636C6142
+          6C61636B00000C5442727573684F626A65637400095374796C654E616D650609
+          73656C656374696F6E0B42727573682E436F6C6F720709783746324139364646
+          00000B54466F6E744F626A65637400095374796C654E616D650604666F6E7400
+          0006544C6162656C00095374796C654E616D65060670726F6D7074064C6F636B
+          656409074F706163697479050000000000000080FE3F0B5374796C654C6F6F6B
+          75700614456469747374796C654C6162656C5374796C65310756697369626C65
+          080000005450463007544C61796F757400095374796C654E616D650614456469
+          747374796C654C6162656C5374796C65310A53697A652E576964746805000000
+          000000008906400B53697A652E4865696768740500000000000000C803401453
+          697A652E506C6174666F726D44656661756C74080756697369626C6508085461
+          624F7264657202010005545465787400095374796C654E616D65060474657874
+          05416C69676E0706436C69656E74064C6F636B6564090748697454657374080A
+          53697A652E576964746805000000000000008906400B53697A652E4865696768
+          740500000000000000C803401453697A652E506C6174666F726D44656661756C
+          7408000000}
+      end>
+    Left = 704
+    Top = 352
+  end
+  object SaveDialog1: TSaveDialog
+    Filter = 'Bitmap|*.bmp'
+    OptionsEx = [ofExNoPlacesBar]
+    Title = 'Saving Image'
+    Left = 328
+    Top = 16
+  end
+  object ImageList1: TImageList
+    Source = <
+      item
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Scale = 2.000000000000000000
+            Width = 32
+            Height = 32
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+              F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              024A494441545847C596BD4EDB501CC563CB52A2448AC482C406520B95E8C4C2
+              C844973244AA5416D63E0302D199A1731FA23C02EF004242ED0003A85B279448
+              E4C3711CCEB9F71448E36B076CA73FE9CAF7E3FF3FE77E3837F62AAF643C1E33
+              77C3B62AE79EE78D552F1F9A8F46A31F781A547FF5625E4C1CC7BBD6FA09F669
+              B85CE0E5455174696D9F505FF9BB80957EB296D3704C61E5000FAEFEC2DA4DA3
+              B1F27601E22DE3944E4BE1C583159EC9C40963145E2C38DF1D7964C258A565E2
+              3C2FE804282BA8BE45591F0C0607B55A6DC10C66D0EFF7EFAAD5EA31AA3F51AE
+              7149DDA04466F01FCC0430639A7C80219FAB6C77BBDDE566B319703C2F9D4E27
+              AAD7EBB7BEEF5FA37985C9F0796ADA30FBD26EB7636EDD3CA127BDBDE1707813
+              04C1B299EA9CC10B7BEBE319DAE67F21F4B1FA7D9C51AC8EB9414F7A9B06CE62
+              0F6712E9784A875EF434E67F41C7670C0C15531AF4A0976C27C1780B01031B5A
+              3CD24EBFAA31BB8F08ECDB94E2A026B565930E02B791D0556E6EA8454DC9CF06
+              3EB3BE293F37D492EC14BC0712C13579AF6A6ED2B49C13C096BD573537695A69
+              1358573537695A8913404215FF866FD4CC0DB5A8A9E604AE1D582BEAAF98486B
+              CDB626714DA0B0F37F46A266E204F0CBC93CFF300CFF20EE888575753B9945F3
+              11049FA024D2EBF5EE709E87280D85F39D69B08F630A4BE244E1D940ECAB921E
+              C1DFE73D2E9463549DDF851C630C634DD233A8A9B06C10FF0EDBFA9B89B84643
+              887E87C0928633612C73984B0D7C75FD425FE24BE8047975246DE239D3977012
+              C85F44D98286E365AF541E00E06808192B556D6A0000000049454E44AE426082}
+            FileName = 'G:\AProyectos\LED\Imagenes\estrella.png'
+          end>
+        Name = 'estrella'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'estrella'
+          end>
+      end>
+    Left = 504
+    Top = 16
+  end
+  object GA: TGAlgorithm
+    pCrossover = 0.800000000000000000
+    pMutation = 0.500000000000000000
+    PopulationSize = 100
+    ChromosomeSize = 30
+    ElitismSize = 5
+    PointsCrossover = 0
+    SelectionType = stRoulette
+    OptimizationType = otMinimum
+    Left = 424
+    Top = 312
+  end
+end

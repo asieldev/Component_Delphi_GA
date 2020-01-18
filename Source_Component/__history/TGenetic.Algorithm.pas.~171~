@@ -1,0 +1,686 @@
+{
+  Project(2019.1): Computation Evolutionary. DEE_PUC-Rio.
+
+  Developed by: Asiel Aldana Ortiz (asiel.aldana89@gmail.com).
+
+  Description: Non Visual Component(Multi-Platform) for implemantation of
+               Genetic Algorithm on  RAD Studio(IDE Delphi(Object Pascal)
+               and C++Builder).
+}
+
+unit TGenetic.Algorithm;
+
+{$DEFINE PopSize}
+{$DEFINE ChromoSize}
+
+interface
+
+uses System.SysUtils, System.Classes, math, Windows, Messages, System.Types;
+
+const
+     MaxPopSize = 1000;
+     MaxChromoSize = 100;
+     RndArraySize = 55;
+
+var
+    RandomArray: array[1..RndArraySize] of Real;
+    RndCurrent:integer;
+
+type
+
+    {$IFDEF PopSize}
+      TLimitPop = 0..MaxPopSize;
+      TArrayLimitPop = array[1..MaxPopSize] of TLimitPop;
+    {$ENDIF}
+
+    {$IFDEF ChromoSize}
+      TLimitChromo = 0..MaxChromoSize;
+      TArrayLimitChromo = array[1..MaxChromoSize] of TLimitChromo;
+    {$ENDIF}
+
+
+    TSelectionType = (stRoulette, stRank);
+    TOptimizationType  = (otMaximum, otMinimum);
+
+    TAllele = boolean;
+    TChromosome = array [1..MaxChromoSize] of TAllele;
+
+    TGenotype = record
+                   Chromo:TChromosome;
+                   FitnessValue:Real;
+                   Mother:TLimitPop;
+                   Father:TLimitPop;
+                   Mutation:TLimitChromo;
+                   CutPoint:TArrayLimitChromo;
+                   Elitism: boolean;
+                 end;
+
+    TPopulation = record
+                    Genotypes: array[1..MaxPopSize] of TGenotype;
+                    SumFitness,
+                    HighFitness,
+                    LowFitness,
+                    MeanFitness:Real;
+                    BestGenotype,
+                    WorstGenotype: TLimitPop;
+                  end;
+
+   TFitnessEvent = procedure ( NewChromosome : TChromosome; var FitnessValue: Real) of object;
+
+TGAlgorithm = class(TComponent)
+
+  type
+
+  private
+
+    VarPopSize, VarElitism: TLimitPop;
+    VarOptimizationType: TOptimizationType;
+    VarSelectionType: TSelectionType;
+    VarChromoSize , VarPointsCross:TLimitChromo;
+    pbCrossover, pbMutation: Real;
+
+    VarOldPop, VarNewPop, VarTempPop: TPopulation;
+
+    VarFitnessEvent: TFitnessEvent;
+
+  protected
+
+    procedure SetChromosomeSize(const Value: TLimitChromo);
+    procedure SetpCrossover(const Value: Real);
+    procedure SetpMutation(const Value: Real);
+    procedure SetPopulationSize(const Value: TLimitPop);
+    procedure SetElitismSize(const Value: TLimitPop);
+    procedure SetFitnessEvent(const Value: TFitnessEvent);
+    procedure SetnumPtsCross(const Value: Real);
+    procedure SetPointsCrossover(const Value: TLimitChromo);
+    procedure SetSelectionType(const Value: TSelectionType);
+    procedure SetOptimizationType(const Value: TOptimizationType);
+    procedure Stadistic(var populacao:TPopulation);
+    procedure qkSort(var APop: TPopulation; LimitLow,  LimitHigh: TLimitPop);
+
+
+    procedure NextGenerationRnd;
+    procedure StartGenerationRnd(Rand:Real);
+    function FRandom:Real;
+    function FFaceCrown(Probability:Real):boolean;
+    function FHigh(min,max:integer):integer;
+    function FSeed(ValueSeed:Real):boolean;
+    procedure StartingPopulation(var Pop:TPopulation);
+
+public
+    constructor Create(AOwner: TComponent);override;
+    function Initialized: Boolean;
+
+    function BinToInt(Chromo:TChromosome; LowCrom, HighChromo: integer):longInt;
+    function BinToReal(Chromo:TChromosome; iStartChromo, HighChromo, LimitLow, LimitHigh: integer):Real;
+
+    function ChromoToString(Chromo:TChromosome):string;
+
+    function Select(var populacao:TPopulation; VarSelectionType: TSelectionType):TLimitPop;
+    procedure Crossover(var Father, Mother, Child1, Child2:TGenotype);
+    function Mutation(var AGenotype:TGenotype):boolean;
+    procedure Start;
+
+    property GetPopulation : TPopulation read VarTempPop ;
+
+published
+    property pCrossover : Real read pbCrossover write SetpCrossover;
+    property pMutation : Real read pbMutation write SetpMutation;
+    property PopulationSize : TLimitPop read VarPopSize write SetPopulationSize;
+    property ChromosomeSize : TLimitChromo read VarChromoSize write SetChromosomeSize;
+    property ElitismSize  : TLimitPop read VarElitism write SetElitismSize;
+    property PointsCrossover : TLimitChromo read VarPointsCross write SetPointsCrossover;
+
+    property SelectionType : TSelectionType read VarSelectionType write SetSelectionType;
+    property OptimizationType : TOptimizationType read VarOptimizationType write SetOptimizationType;
+
+    property OnFitness : TFitnessEvent read VarFitnessEvent write SetFitnessEvent;
+
+
+
+  end;
+
+
+procedure Register;
+
+implementation
+
+procedure Register;
+begin
+    RegisterComponents('Lintelligent', [TGAlgorithm]);
+end;
+
+{ TGAlgorithm }
+
+function TGAlgorithm.FRandom: Real;
+begin
+
+  RndCurrent := RndCurrent + 1;
+
+if (RndCurrent > 55) then
+  begin
+
+    RndCurrent:=1;
+    NextGenerationRnd;
+
+  end;
+
+FRandom := RandomArray[RndCurrent];
+
+end;
+
+function TGAlgorithm.FHigh(min, max: integer): integer;
+begin
+  if min >= max then FHigh := min
+  else FHigh := trunc(min + FRandom * (max-min));
+
+end;
+
+procedure TGAlgorithm.NextGenerationRnd;
+var
+  j1:integer;
+  newHigh:Real;
+begin
+for j1:= 1 to 24 do
+  begin
+    newHigh := RandomArray[j1] - RandomArray[j1+31];
+    if (newHigh < 0.0) then newHigh := newHigh + 1.0;
+    RandomArray[j1] := newHigh;
+  end;
+for j1:= 25 to 55 do
+    begin
+      newHigh := RandomArray[j1] - RandomArray[j1-24];
+      if (newHigh < 0.0) then newHigh := newHigh + 1.0;
+      RandomArray[j1] := newHigh;
+    end;
+
+end;
+
+
+
+function TGAlgorithm.BinToInt(Chromo: TChromosome; LowCrom, HighChromo: integer): longInt;
+var
+  i:integer;
+  ACSum, Power2:longInt;
+begin
+  ACSum:=0;
+  Power2:=1;
+if (VarChromoSize > MaxChromoSize) or (LowCrom>HighChromo) then BinToInt:=-1
+else
+    begin
+    for i:=HighChromo downto LowCrom do
+        begin
+          if Chromo[i] then ACSum:=ACSum+Power2;
+          Power2:=Power2*2;
+        end;
+        BinToInt:=ACSum;
+    end;
+
+end;
+
+function TGAlgorithm.BinToReal(Chromo: TChromosome; iStartChromo, HighChromo, LimitLow, LimitHigh: integer): Real;
+begin
+  BinToReal:=LimitLow + BinToInt(Chromo, iStartChromo,HighChromo)*
+  (LimitHigh - LimitLow)/ (power(2,(HighChromo-iStartChromo+1))-1);
+
+end;
+
+function TGAlgorithm.FFaceCrown(Probability: Real): boolean;
+begin
+
+  if Probability = 1.0 then FFaceCrown := true
+  else FFaceCrown := (FRandom <= Probability);
+
+end;
+
+constructor TGAlgorithm.Create(AOwner: TComponent);
+begin
+
+ inherited Create (AOwner);
+
+    pbCrossover := 0.8;
+    pbMutation := 0.5;
+    VarPopSize := 100;
+    VarChromoSize := 30;
+    VarElitism := 5;
+    VarPointsCross := 0;
+    VarSelectionType := TSelectionType.stRoulette;
+    VarOptimizationType := TOptimizationType.otMinimum;
+
+end;
+
+function TGAlgorithm.ChromoToString(Chromo: TChromosome): string;
+var
+
+  i:integer;
+  strTemp:string;
+
+begin
+
+  strTemp:='';
+  for i:=1 to VarChromoSize do
+    if Chromo[i] then strTemp:=strTemp+'1'
+    else strTemp:=strTemp+'0';
+  ChromoToString:=strTemp;
+
+end;
+
+procedure TGAlgorithm.Crossover(var Father, Mother, Child1, Child2: TGenotype);
+var
+
+  i,NextStep,pontoAnterior:integer;
+  iNext:boolean;
+  CutPoint: TArrayLimitChromo;
+
+begin
+
+for i:=1 to VarPointsCross do CutPoint[i]:=0;
+
+//Crossover Uniform
+if VarPointsCross = 0 then
+   begin
+   for i:=1 to VarChromoSize do
+       if FFaceCrown(0.5) then
+          begin
+            CutPoint[i]:=1; // Array CutPoint to Mask
+            Child1.Chromo[i]:=Father.Chromo[i];
+            Child2.Chromo[i]:=Mother.Chromo[i];
+          end
+       else
+           begin
+             CutPoint[i]:=0;
+             Child1.Chromo[i]:=Mother.Chromo[i];
+             Child2.Chromo[i]:=Father.Chromo[i];
+           end;
+   end
+else
+    begin
+      iNext:=true;
+      if VarPointsCross > VarChromoSize-1 then VarPointsCross :=VarChromoSize-1;
+
+      if FFaceCrown(pbCrossover) then CutPoint[1]:=FHigh(1,VarChromoSize)
+    else
+        begin
+          iNext:=false; //No Crossover
+          Child1:=Father;
+          Child2:=Mother;
+        end;
+
+    if iNext then // Crossover of VarPointsCross Points
+       begin
+         NextStep:=0;
+         pontoAnterior:=0;
+       repeat
+           inc(NextStep);
+           if (NextStep mod 2 =1) then
+              begin
+              for i:=pontoAnterior+1 to CutPoint[NextStep] do
+                  begin
+                    Child1.Chromo[i]:=Father.Chromo[i];
+                    Child2.Chromo[i]:=Mother.Chromo[i];
+                  end;
+              end
+           else
+               begin
+               for i:=pontoAnterior+1 to CutPoint[NextStep] do
+                   begin
+                     Child1.Chromo[i]:=Mother.Chromo[i];
+                     Child2.Chromo[i]:=Father.Chromo[i];
+                   end;
+               end;
+
+           pontoAnterior:=CutPoint[NextStep];
+
+           if FFaceCrown(pbCrossover) then CutPoint[NextStep+1]:=FHigh(CutPoint[NextStep]+1,VarChromoSize)
+           else CutPoint[NextStep+1]:=VarChromoSize;
+           until (NextStep = VarPointsCross) or (CutPoint[NextStep] = VarChromoSize);
+
+       if (NextStep mod 2 =0) then
+          begin
+          for i:=(CutPoint[NextStep]+1) to VarChromoSize do
+              begin
+                Child1.Chromo[i]:=Father.Chromo[i];
+                Child2.Chromo[i]:=Mother.Chromo[i];
+              end;
+          end
+       else
+           begin
+           for i:=(CutPoint[NextStep]+1) to VarChromoSize do
+               begin
+                 Child2.Chromo[i]:=Father.Chromo[i];
+                 Child1.Chromo[i]:=Mother.Chromo[i];
+               end;
+           end;
+
+       if (NextStep+1 <= VarPointsCross) and (CutPoint[NextStep] = VarChromoSize) then
+          for i:=NextStep+1 to VarPointsCross do CutPoint[i]:=0;
+       end;
+    end;
+
+Child1.CutPoint:=CutPoint;
+Child2.CutPoint:=CutPoint;
+
+Mutation(Child1);
+Mutation(Child2);
+
+end;
+
+
+
+procedure TGAlgorithm.Stadistic(var populacao: TPopulation);
+var
+i: integer;
+begin
+  populacao.SumFitness:=populacao.Genotypes[1].FitnessValue;
+  populacao.LowFitness:=populacao.Genotypes[1].FitnessValue;
+  populacao.HighFitness:=populacao.Genotypes[1].FitnessValue;
+  populacao.BestGenotype:=1;
+  populacao.WorstGenotype:=1;
+for i:=2 to VarPopSize do
+    with populacao.Genotypes[i] do
+         begin
+           populacao.SumFitness:=populacao.SumFitness+populacao.Genotypes[i].FitnessValue;
+         if FitnessValue > populacao.HighFitness then
+            begin
+              populacao.HighFitness:=FitnessValue;
+              populacao.BestGenotype:=i;
+            end;
+         if FitnessValue < populacao.LowFitness then
+            begin
+              populacao.LowFitness:=FitnessValue;
+              populacao.WorstGenotype:=i;
+            end;
+         end;
+populacao.MeanFitness:=populacao.SumFitness / VarPopSize;
+
+end;
+
+
+
+
+function TGAlgorithm.FSeed(ValueSeed: Real): boolean;
+begin
+if (ValueSeed>0) and (ValueSeed<1) then
+   begin
+     StartGenerationRnd(ValueSeed);
+     FSeed:=true;
+   end
+else FSeed:=false;
+end;
+
+
+
+procedure TGAlgorithm.Start;
+var
+  i,j,Father, Mother: TLimitPop;
+begin
+
+for i:=1 to VarElitism do
+    begin
+      VarNewPop.Genotypes[i]:=VarOldPop.Genotypes[i];
+      VarNewPop.Genotypes[i].Father:=i;
+      VarNewPop.Genotypes[i].Mother:=0;
+    for j:=1 to VarChromoSize do VarNewPop.Genotypes[i].CutPoint[j]:=0;
+      VarNewPop.Genotypes[i].Mutation:=0;
+      VarNewPop.Genotypes[i].Elitism:=true;
+    end;
+
+i:=VarElitism+1;
+
+while (i<=VarPopSize-1) do
+      begin
+        Father:=Select(VarOldPop, VarSelectionType);
+        Mother:=Select(VarOldPop, VarSelectionType);
+        Crossover(VarOldPop.Genotypes[Father],VarOldPop.Genotypes[Mother],
+               VarNewPop.Genotypes[i],VarNewPop.Genotypes[i+1]);
+
+        VarFitnessEvent(VarNewPop.Genotypes[i].Chromo,VarNewPop.Genotypes[i].FitnessValue);
+        VarNewPop.Genotypes[i].Father:=Father;
+        VarNewPop.Genotypes[i].Mother:=Mother;
+        VarNewPop.Genotypes[i].Elitism:=false;
+
+        VarFitnessEvent(VarNewPop.Genotypes[i+1].Chromo,VarNewPop.Genotypes[i+1].FitnessValue);
+        VarNewPop.Genotypes[i+1].Father:=Father;
+        VarNewPop.Genotypes[i+1].Mother:=Mother;
+        VarNewPop.Genotypes[i+1].Elitism:=false;
+
+      i:=i+2;
+      end;
+
+if i=VarPopSize then
+   begin
+     j:=Select(VarOldPop, VarSelectionType);
+     VarNewPop.Genotypes[i]:=VarOldPop.Genotypes[j];
+     VarNewPop.Genotypes[i].Father:=j;
+     VarNewPop.Genotypes[i].Mother:=0;
+   for j:=1 to VarChromoSize do VarNewPop.Genotypes[i].CutPoint[j]:=0;
+     VarNewPop.Genotypes[i].Mutation:=0;
+     VarNewPop.Genotypes[i].Elitism:=true;
+   end;
+
+  qkSort(VarNewPop,1,VarPopSize);
+  Stadistic(VarNewPop);
+  VarTempPop := VarOldPop;
+  VarOldPop :=  VarNewPop;
+
+end;
+
+
+
+procedure TGAlgorithm.StartGenerationRnd(Rand: Real);
+var
+
+  j1,ii:integer;
+  newHigh,OldHigh:Real;
+
+begin
+  RandomArray[55] := Rand;
+  OldHigh := Rand;
+  newHigh := 1.0e-9;
+
+for j1:=1 to 54 do
+  begin
+    ii := 21*j1 mod 55;
+    RandomArray[ii] := newHigh;
+    newHigh := OldHigh - newHigh;
+  if (newHigh < 0.0) then newHigh:=newHigh+1.0;
+    OldHigh:=RandomArray[ii]
+  end;
+
+  NextGenerationRnd;
+  NextGenerationRnd;
+  NextGenerationRnd;
+  RndCurrent:=0;
+
+end;
+
+procedure TGAlgorithm.StartingPopulation(var Pop: TPopulation);
+var
+ i,j:integer;
+
+begin
+for i:=1 to VarPopSize do
+    begin
+    for j:=1 to VarChromoSize do
+        begin
+          Pop.Genotypes[i].Chromo[j]:=FFaceCrown(0.5);
+          Pop.Genotypes[i].CutPoint[j]:=0;
+        end;
+      Pop.Genotypes[i].Father:=0;
+      Pop.Genotypes[i].Mother:=0;
+
+
+      VarFitnessEvent(Pop.Genotypes[i].Chromo,Pop.Genotypes[i].FitnessValue);
+
+      Pop.Genotypes[i].Mutation:=0;
+      Pop.Genotypes[i].Elitism:=false;
+    end;
+
+  Stadistic(Pop);
+
+end;
+
+
+
+Function TGAlgorithm.Initialized: Boolean;
+begin
+  if Assigned(VarFitnessEvent) then
+  begin
+    FSeed(0.1111);
+    StartingPopulation(VarOldPop);
+    qkSort(VarOldPop,1,VarPopSize);
+    Initialized := True;
+  end
+  else
+   Initialized := False;
+end;
+
+function TGAlgorithm.Mutation(var AGenotype: TGenotype): boolean;
+var
+sorteado: integer;
+begin
+if FFaceCrown(pbMutation) then
+   begin
+     sorteado:=FHigh(1,VarChromoSize);
+     AGenotype.Chromo[sorteado]:=not(AGenotype.Chromo[sorteado]);
+   AGenotype.Mutation:=sorteado;
+   Mutation:=true;
+   end
+else Mutation:=false;
+end;
+
+
+
+
+
+procedure TGAlgorithm.qkSort(var APop: TPopulation; LimitLow,
+  LimitHigh: TLimitPop);
+var
+esq,dir:TLimitPop;
+pivo,aux:TGenotype;
+begin
+esq:=LimitLow;
+dir:=LimitHigh;
+pivo:=APop.Genotypes[(LimitLow+LimitHigh) div 2];
+
+while(esq <= dir) do
+   begin
+   if VarOptimizationType=otMaximum then
+      begin
+      while (APop.Genotypes[esq].FitnessValue > pivo.FitnessValue) do inc(esq);
+      while (APop.Genotypes[dir].FitnessValue < pivo.FitnessValue) do dec(dir);
+      end
+   else
+       begin
+       while (APop.Genotypes[esq].FitnessValue < pivo.FitnessValue) do inc(esq);
+       while (APop.Genotypes[dir].FitnessValue > pivo.FitnessValue) do dec(dir);
+       end;
+   if (esq <= dir) then
+      begin
+      aux:=APop.Genotypes[esq];
+      APop.Genotypes[esq]:=APop.Genotypes[dir];
+      APop.Genotypes[dir]:=aux;
+      inc(esq);
+      dec(dir);
+      end;
+    end;
+
+if (dir-LimitLow)>0 then qkSort(APop,LimitLow,dir);
+if (LimitHigh-esq)>0 then qkSort(APop,esq,LimitHigh);
+
+end;
+
+
+
+
+
+function TGAlgorithm.Select(var populacao: TPopulation;
+  VarSelectionType: TSelectionType): TLimitPop;
+var
+Rand, SumTemp:Real;
+indPop:integer;
+begin
+indPop:=0;
+case VarSelectionType of
+     stRoulette:
+            begin
+            SumTemp:=0;
+            Rand:=FRandom * populacao.SumFitness;
+            repeat
+               inc(indPop);
+               SumTemp:=SumTemp+populacao.Genotypes[indPop].FitnessValue;
+               until (SumTemp>=Rand) or (indPop=VarPopSize);
+            Select:=indPop;
+            end;
+     stRank:
+          begin
+          indPop:=trunc (VarPopSize * (1.5 - sqrt (2.25 - 2 * FRandom())));
+          if (indPop < 1) then  indPop := 1;
+          Select:= indPop;
+          end;
+     else Select:=0;
+     end;
+
+end;
+
+
+
+procedure TGAlgorithm.SetFitnessEvent(const Value: TFitnessEvent);
+begin
+  VarFitnessEvent := Value;
+end;
+
+
+
+procedure TGAlgorithm.SetElitismSize(const Value: TLimitPop);
+begin
+  VarElitism := Value;
+end;
+
+
+
+procedure TGAlgorithm.SetnumPtsCross(const Value: Real);
+begin
+
+end;
+
+procedure TGAlgorithm.SetOptimizationType(const Value: TOptimizationType);
+begin
+ VarOptimizationType := Value;
+end;
+
+procedure TGAlgorithm.SetpCrossover(const Value: Real);
+begin
+  pbCrossover := Value;
+end;
+
+procedure TGAlgorithm.SetpMutation(const Value: Real);
+begin
+  pbMutation := Value;
+end;
+
+procedure TGAlgorithm.SetSelectionType(const Value: TSelectionType);
+begin
+  VarSelectionType := Value;
+end;
+
+procedure TGAlgorithm.SetChromosomeSize(const Value: TLimitChromo);
+begin
+  VarChromoSize := Value;
+end;
+
+procedure TGAlgorithm.SetPointsCrossover(const Value: TLimitChromo);
+begin
+  VarPointsCross := Value;
+end;
+
+procedure TGAlgorithm.SetPopulationSize(const Value: TLimitPop);
+begin
+  VarPopSize := Value;
+end;
+
+
+
+
+
+end.
